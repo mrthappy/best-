@@ -1,3 +1,7 @@
+<?php
+include "../database/database.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -12,17 +16,36 @@
      <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <script src="../javascript/app.js"></script>
-    <!-- <script src="../javascript/java.js"></script>-->
-     <!--<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
-      <!--<script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>-->
-
+     <script src="../javascript/java.js"></script>
+     <link rel ="stylesheet" href="../stylesheet/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <style>
-
-  </style>
 </head>
 <body>
-  
+  <section class ="main_header" data-role="header_holder">
+    <header class="header">
+    <div class ="logo">
+      <img src="../images/newlogo-Recovered.png">
+    </div>
+    <div class="hamburger">
+      --------
+    </div>
+    <div id="welcome_text">
+      <h1>We are a small Team obsessed with producing the best models the world has never seen</h2>
+    </div>
+    </header>
+  </section>
+  <section class="photo_grid">
+    <div class="img_holder">
+      <img src="../images/model1.jpg">
+    </div>
+    <div class="img_holder">
+      <img src="../images/model2.jpg">
+    </div>
+    <div class="img_holder">
+      <img src="../images/model10.jpg">
+    </div>
+
+
+  </section>
 </body>
 </html>
