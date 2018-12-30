@@ -27,7 +27,7 @@ include "../database/database.php";
       <img src="../images/newlogo-Recovered.png">
     </div>
     <div class="hamburger">
-      --------
+      <span class="burger_icon"></span>
     </div>
     <div id="welcome_text">
       <h1>We are a small Team obsessed with producing the best models the world has never seen</h2>
@@ -42,9 +42,16 @@ include "../database/database.php";
       <img src="../images/model2.jpg">
     </div>
     <div class="img_holder">
-      <img src="../images/model10.jpg">
+      <img src="../images/mode12.jpg">
     </div>
-
+    <div class="img_holder">
+      <img src="../images/mode5.jpg">
+    </div><div class="img_holder">
+      <img src="../images/model12.jpg">
+    </div>
+    <div class="img_holder">
+      <img src="../images/model13.jpg">
+    </div>
 
   </section>
   <section class="connection" data-role="contact_details">

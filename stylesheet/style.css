@@ -11,10 +11,42 @@
 	display:block;
 	clear:both;
 }
+span {
+  display:block;
+}
 body{
   background: #353535;
   font-family: 'Thasadith', sans-serif;
   color:white;
+}
+.burger_icon{
+  width:30px;
+  height:4px;
+  background:#fff;
+  display:block;
+  position:relative;
+  transition:all linear 7s;
+}
+.burger_icon:hover{
+  background:orange;
+}
+.burger_icon:after{
+  display:block;
+  content:"";
+  width:30px;
+  height:4px;
+  background:#fff;
+  position:absolute;
+  top:10px;
+}
+.burger_icon:before{
+  display:block;
+  content:"";
+  width:30px;
+  height:4px;
+  background:#fff;
+  position:absolute;
+  bottom:10px;
 }
 .photo_grid{
   margin-bottom:1.2rem;
