@@ -11,7 +11,7 @@ include "../database/database.php";
      <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,400" rel="stylesheet">
 
     <!--  <link rel="stylesheet"  type="text/css"  href="../stylesheet/newcss.css">-->
-        <link rel="stylesheet"  type="text/css"  href="../stylesheet/newcss.css">
+
 
      <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -46,6 +46,13 @@ include "../database/database.php";
     </div>
 
 
+  </section>
+  <section class="connection" data-role="contact_details">
+    <form id ="form">
+      <h5>Make A Connect?? </h5>
+      <input type="submit" name="submit" value="Connect"class="connect">
+
+    </form>
   </section>
 </body>
 </html>

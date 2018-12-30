@@ -16,9 +16,55 @@ body{
   font-family: 'Thasadith', sans-serif;
   color:white;
 }
+.photo_grid{
+  margin-bottom:1.2rem;
+}
+input[type=text],input[type=submit]{
+  display:block;
+  outline:none;
+  border:3px;
+
+}
+
+
+input[name=submit]{
+  width:100%;
+  background:#0078D7;;
+  height:40px;
+  border-radius:30px;
+  color:white;
+  perspective:1000px;
+  perspective-origin:center;
+  border: 2px solid #fff!important;
+  transition:all ease-in 7.5s;
+  cursor:pointer;
+
+}
+input[name=submit]:hover{
+  background:linear-gradient(30deg,#1cfaca,#0078D7);
+}
+.connection{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
 img{
   display:block;
   max-width:100%;
+
+}
+#welcome_text {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0px 10px;
+  margin-bottom:1rem;
+}
+#welcome_text h1{
+  font-size:1.5rem;
+  line-height:1.3em;
+  vertical-align:middle;
 
 }
 .photo_grid{
@@ -27,5 +73,10 @@ img{
   flex-direction:column;
 }
 .img_holder {
-
+margin-bottom:.9rem;
+perspective:1000px;
+transition:all ease 2s;
+}
+.img_holder:last-of-type{
+  margin-bottom:0px;
 }

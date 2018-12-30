@@ -9,4 +9,5 @@ if($database->connect_errno){
   $message.=  "(" . $database->connect_errno.")";
   exit($message);
 }
+
 ?>
