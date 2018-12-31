@@ -68,8 +68,18 @@ include "../database/database.php";
 
   <section class="contactform">
     <form method="POST" action="">
-      <form class="login_form"  name="loginForm" action="test.php" METHOD="POST" ng-controller="controller">
+      <form class="login_form"  name="loginForm" action="contact.php" METHOD="POST" ng-controller="controller">
 
+        <div class="div">
+            <i class="far fa-envelope"></i>
+            <input type="text" name="firstname"  id="email" Placeholder="Firstname" class="input">
+
+        </div>
+        <div class="div">
+            <i class="far fa-envelope"></i>
+            <input type="text" name="lastname"  id="email" Placeholder="Lirstname" class="input">
+
+        </div>
           <div class="div">
               <i class="far fa-envelope"></i>
               <input type="email" name="email"  id="email" Placeholder="E-mail" class="input">
