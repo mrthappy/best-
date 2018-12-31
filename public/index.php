@@ -1,3 +1,4 @@
+
 <?php
 include "../database/database.php";
 ?>
@@ -64,6 +65,7 @@ include "../database/database.php";
 
     </form>
   </section>
+<<<<<<< HEAD
   <section class="contactform">
     <form method="POST" action="">
 <h1>jjsj</h1>
@@ -71,8 +73,12 @@ include "../database/database.php";
   </form>
   </section>
   <section class="footerdiv">
+=======
+  <section class="footer">
+>>>>>>> 6fd9f2eef817b34f988e067fd167a5a3e1fc55bb
     <?php include "footer.php";?>
   </section>
 
 </body>
 </html>
+
