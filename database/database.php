@@ -1,4 +1,5 @@
 
+
 <?php
 include "datbase_credentials.php";
 // making a connection to the database
@@ -11,3 +12,18 @@ if($database->connect_errno){
 }
 
 ?>
+
+<?php
+class Database{
+var $id;
+function hello  (){
+  echo "hello this is a method ";
+}
+}
+
+
+
+
+
+ ?>
+
