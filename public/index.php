@@ -80,6 +80,11 @@ include "../database/database.php";
             <input type="text" name="lastname"  id="email" Placeholder="Lirstname" class="input">
 
         </div>
+        <div class="div">
+            <i class="far fa-envelope"></i>
+            <input type="password" name="password"  id="email" Placeholder="Firstname" class="input">
+
+        </div>
           <div class="div">
               <i class="far fa-envelope"></i>
               <input type="email" name="email"  id="email" Placeholder="E-mail" class="input">
