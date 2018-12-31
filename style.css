@@ -176,7 +176,7 @@ transition:all ease 2s;
 }
  .contactform{
    max-width:100vw;
-  background:rgba(0,0,12,.7);
+   background:red;
    height:100%;
    position:fixed;
    top:0;
@@ -187,7 +187,7 @@ display:none;
 }
 .appear{
   max-width:100vw;
-  background:rgba(0,0,12,.7);
+  background:red;
   height:100%;
   position:fixed;
   top:0;
@@ -196,80 +196,6 @@ display:none;
   bottom:0;
   display:block;
 
-}
-.input{
-  display: block;
-  outline: none;
-  width: 100%;
-  padding: 20px;
-  border: 1px solid #d3d3d3;
-  border-radius: 50px;
-  margin-bottom: 2em;
-  padding-left: 60px;
-  transition: all .5s ease-in;
-}
-.inputErrors{
-  color:red;
-  font-size:9px;
-  text-align:center;
-}
-#password {
-    display: block;
-    outline: none;
-    width: 100%;
-    padding: 20px;
-    padding-left: 60px;
-    border: none;
-    border-radius: 50px;
-    margin-bottom: 2em;
-}
-.submitbtn {
-    display: block;
-    background: #0aafbe;
-    padding: 20px;
-    border-radius: 30px;
-    color: white;
-    border: 1px solid #d3d3d3;
-    ;
-    width: 100%;
-    padding: 20px;
-}
-label {
-    display: block;
-    font-size: .6em;
-    font-style: italic;
-    text-align: center;
-    color: #333;
-}
-
-.register {
-    color: #1cfaca;
-    font-size: 1.4em;
-    line-height: 1.4;
-    margin-left: 1rem;
-    text-decoration: none;
-}
-
-.form_div {
-    position: relative;
-}
-
-.fa-envelope,
-.fa-unlock,.fa-user-circle {
-    color: grey;
-    font-size: 1.5em;
-    position: relative;
-    line-height: 6;
-    top: 35px;
-    left: 20px;
-    vertical-align: middle;
-}
-
-.register_span {
-    color: grey;
-    display: block;
-    margin-top: 1.4rem;
-    text-align: center;
 }
 
 #footer{
