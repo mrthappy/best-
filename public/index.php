@@ -70,6 +70,9 @@ include "../database/database.php";
     </input>
   </form>
   </section>
+  <section class="footerdiv">
+    <?php include "footer.php";?>
+  </section>
 
 </body>
 </html>
