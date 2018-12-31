@@ -61,5 +61,9 @@ include "../database/database.php";
 
     </form>
   </section>
+  <section class="footer">
+    <?php include "footer.php";?>
+  </section>
+
 </body>
 </html>
