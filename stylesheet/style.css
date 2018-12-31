@@ -176,7 +176,7 @@ transition:all ease 2s;
 }
  .contactform{
    max-width:100vw;
-   background:red;
+  background:rgba(0,0,12,.7);
    height:100%;
    position:fixed;
    top:0;
@@ -187,7 +187,7 @@ display:none;
 }
 .appear{
   max-width:100vw;
-  background:red;
+  background:rgba(0,0,12,.7);
   height:100%;
   position:fixed;
   top:0;
