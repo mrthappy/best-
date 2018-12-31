@@ -90,6 +90,11 @@ include "../database/database.php";
               <input type="email" name="email"  id="email" Placeholder="E-mail" class="input">
 
           </div>
+          <div class="div">
+              <i class="far fa-envelope"></i>
+              <input type="text"submit" value ="contact"  id="email" Placeholder="password" class="input">
+
+          </div>
 
           <div class="div">
               <i class="fas fa-unlock"></i>
