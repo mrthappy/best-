@@ -27,26 +27,28 @@ include "../database/database.php";
     <div class ="logo">
       <img src="../images/newlogo-Recovered.png">
     </div>
-    <div class="hamburger">
+    <div id="hamburger">
       <span class="burger_icon"></span>
     </div>
-    <div id="welcome_text">
-      <h1>We are a small Team obsessed with producing the best models the world has never seen</h2>
-    </div>
+
     </header>
+
   </section>
+  <div id="welcome_text">
+    <h1>We are a small Team obsessed with producing the best models the world has never seen</h2>
+  </div>
   <section class="photo_grid">
     <div class="img_holder">
       <img src="../images/model1.jpg">
     </div>
     <div class="img_holder">
-      <img src="../images/model2.jpg">
+      <img src="../images/model13.jpg">
     </div>
     <div class="img_holder">
-      <img src="../images/mode12.jpg">
+      <img src="../images/model13.jpg">
     </div>
     <div class="img_holder">
-      <img src="../images/mode5.jpg">
+      <img src="../images/model13.jpg">
     </div><div class="img_holder">
       <img src="../images/model12.jpg">
     </div>
@@ -60,8 +62,17 @@ include "../database/database.php";
       <h5>Make A Connect?? </h5>
       <input type="submit" name="submit" value="Connect"class="connect">
 
+
     </form>
   </section>
+
+  <section class="contactform">
+    <form method="POST" action="">
+<h1>jjsj</h1>
+    </input>
+  </form>
+  </section>
+  <section class="footerdiv">
   <section class="footer">
     <?php include "footer.php";?>
   </section>

@@ -5,7 +5,6 @@ let weatherapi="https://api.openweathermap.org/data/2.5/weather?q=London,uk";
 fetch(weatherapi + "&appid=" + key).then(function(response){
   return response.json();
 }).then(function(data){
-  console.log(data.weather[0].id);
 });
 function Weather(){
   $.ajax({
@@ -21,9 +20,18 @@ function Weather(){
 $(document).ready(function(){
 
   let btn =$(".connect");
-  console.log(btn);
-  btn.click(function(){
-    Weather();
-  })
+  btn.click(function(event){
 
-})
+    let contactform=$(".contactform");
+    contactform.addClass("appear");
+    console.log(contactform);
+    return false;
+
+  })
+  let hamburger=$("#hamburger");
+  hamburger.click(function(){
+  let self=$(this);
+  self.toggleClass("active");
+});
+
+});
