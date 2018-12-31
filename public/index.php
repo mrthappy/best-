@@ -76,6 +76,9 @@ include "../database/database.php";
 
   <section class="footer">
 
+
+  <section class="footer">
+
     <?php include "footer.php";?>
   </section>
 
