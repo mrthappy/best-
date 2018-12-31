@@ -197,6 +197,17 @@ display:none;
   display:block;
 
 }
+.input{
+  display: block;
+  outline: none;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #d3d3d3;
+  border-radius: 50px;
+  margin-bottom: 2em;
+  padding-left: 60px;
+  transition: all .5s ease-in;
+}
 
 #footer{
     display:-webkit-box;
