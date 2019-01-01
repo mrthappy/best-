@@ -58,47 +58,28 @@ include "../database/database.php";
 
   </section>
   <section class="connection" data-role="contact_details">
-    <form id ="form">
+    <?php
+        if(isset($_GET["contactPage"])):
+          console.log("dddjd");
+
+
+        endif;
+
+    ?>
+    <form id ="form" method ="GET">
       <h5>Make A Connect?? </h5>
       <input type="submit" name="submit" value="Connect"class="connect">
 
 
+
+
     </form>
+        <a href="connect.php?contactPage=contactpage" class="connects">connect</a>
+
   </section>
 
   <section class="contactform">
-    <form method="POST" action="">
-      <form class="login_form"  name="loginForm" action="contact.php" METHOD="POST" ng-controller="controller">
 
-        <div class="div">
-            <i class="far fa-envelope"></i>
-            <input type="text" name="firstname"  id="email" Placeholder="Firstname" class="input">
-
-        </div>
-        <div class="div">
-            <i class="far fa-envelope"></i>
-            <input type="text" name="lastname"  id="email" Placeholder="Lirstname" class="input">
-
-        </div>
-        <div class="div">
-            <i class="far fa-envelope"></i>
-            <input type="password" name="password"  id="email" Placeholder="Firstname" class="input">
-
-        </div>
-          <div class="div">
-              <i class="far fa-envelope"></i>
-              <input type="email" name="email"  id="email" Placeholder="E-mail" class="input">
-
-          </div>
-          <div class="div">
-              <i class="far fa-envelope"></i>
-              <input type="text"submit" value ="contact"  id="email" Placeholder="password" class="input">
-
-          </div>
-
-
-      </form>
-    </form>
   </section>
 
 
