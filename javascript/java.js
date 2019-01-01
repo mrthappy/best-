@@ -20,16 +20,12 @@ function Weather(){
 $(document).ready(function(){
 
   let btn =$(".connect");
-  let a=$(".connects");
-  console.log(a);
-  a.click(function(){
 
 
-  })
   btn.click(function(event){
 
     let contactform=$(".contactform");
-    contactform.addClass("appear");
+    contactform.delay(500).addClass("appear");
     console.log(contactform);
     return false;
 
