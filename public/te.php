@@ -94,7 +94,54 @@ width:100%;
   top:20px;
   cursor:pointer;
 }
+@media screen and (max-width:380px){
+  .close{
 
+    color:#1fd3c6;
+    font-size:1.8rem;
+    position:absolute;
+    right:120px;
+    top:120px;
+    cursor:pointer;
+  }
+  .divider{
+    flex:100%;
+    height:50px;
+    margin-bottom:50px;
+
+  }
+  .divider h3{
+    font-size:.6rem;
+  }
+  .contactf{
+    width:100%;
+    margin-top:30px;
+  }
+  .inputtag {
+    height:20px;
+    padding:16px;
+  }
+
+.contact1{
+  flex-direction:column;
+}
+.contactform{width:100%;}
+.inputtags{
+  display:block;
+  background:#234440;
+  color:white;
+  border:1px solid transparent;
+  outline:none;
+  border-radius:8px ;
+  width:100%;
+  height:50px;
+  text-align:center;
+  margin-top:10px;
+  text-transform:uppercase;
+}
+
+
+}
 </style>
 </head>
 
