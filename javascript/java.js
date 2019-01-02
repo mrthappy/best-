@@ -44,4 +44,9 @@ $(document).ready(function(){
   self.toggleClass("active");
 });
 
+const contactbtn =$(".inputtags");
+contactbtn.click(function(){
+  console.log("this is the btn");
+})
+
 });
