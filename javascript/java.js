@@ -18,13 +18,23 @@ function Weather(){
 
 
 $(document).ready(function(){
+  let closebtn=document.querySelector(".close");
+  closebtn.addEventListener("click",CloseMenu);
+  function CloseMenu(){
+    let service =false;
+  let connection = document.querySelector(".connection");
+  connection.classList.remove("appear");
+  service =true;
+  }
 
   let btn =$(".connect");
+
+
   btn.click(function(event){
 
-    let contactform=$(".contactform");
-    contactform.addClass("appear");
-    console.log(contactform);
+    let contactform=$(".connection");
+    contactform.delay(500).addClass("appear");
+
     return false;
 
   })

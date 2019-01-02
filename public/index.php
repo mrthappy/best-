@@ -58,62 +58,53 @@ include "../database/database.php";
 
   </section>
   <section class="connection" data-role="contact_details">
-    <form id ="form">
-      <h5>Make A Connect?? </h5>
-      <input type="submit" name="submit" value="Connect"class="connect">
+    <section class="contact1">
+    <div class="divider">
+      <h3>BEST ADVICE</h3>
+      <a href="team.php">Meet our Team </a>
+    </div>
+    <div class="contactf">
 
 
-    </form>
-  </section>
+    <form name="contactform" class="contactform"  method="POST" action="contact.php">
+      <span class="close">X</span>
 
-  <section class="contactform">
-    <form method="POST" action="">
-      <form class="login_form"  name="loginForm" action="contact.php" METHOD="POST" ng-controller="controller">
-
-        <div class="div">
-            <i class="far fa-envelope"></i>
-            <input type="text" name="firstname"  id="email" Placeholder="Firstname" class="input">
-
-        </div>
-        <div class="div">
-            <i class="far fa-envelope"></i>
-            <input type="text" name="lastname"  id="email" Placeholder="Lirstname" class="input">
-
-        </div>
-        <div class="div">
-            <i class="far fa-envelope"></i>
-            <input type="password" name="password"  id="email" Placeholder="Firstname" class="input">
-
-        </div>
-          <div class="div">
-              <i class="far fa-envelope"></i>
-              <input type="email" name="email"  id="email" Placeholder="E-mail" class="input">
-
-          </div>
-          <div class="div">
-              <i class="far fa-envelope"></i>
-              <input type="text"submit" value ="contact"  id="email" Placeholder="password" class="input">
-
-          </div>
-
-          <div class="div">
-              <i class="fas fa-unlock"></i>
-              <input type="password" name="password" id="password" placeholder="Password" class="input">
-
-          </div>
-
-          <div class="div">
-              <input type="submit" value="LOGIN" class="submitbtn"name="submit">
-          </div>
-          <span class="register_span">Do You have an account?<a href="login.php?login=register"class="register">Register</a></span>
-          <span class="password_reset"><a href="login.php?login=password" class="register">Forgot Password</a></span>
-
+      <h1>Write Us An Email</h1>
+      <div class="messagediv"></div>
+      <input type ="text" name="firstname" class="inputtag" placeholder="firstname">
+        <input type ="text" name="lastname" class="inputtag" placeholder="lastname">
+          <input type ="text" name="email" class="inputtag" placeholder="email">
+            <input type ="textarea" name="textarea" class="area" placeholder="Message">
+              <input type ="submit" name="submit" class="inputtags" value="submit">
 
       </form>
+    </div>
   </section>
-  <section class="footerdiv">
+  <script>
+  let closebtn=document.querySelector(".close");
+  closebtn.addEventListener("click",CloseMenu);
+  function CloseMenu(){
+  console.log("this is the best");
+  }
 
-  <section class="footer">
+  </script>
+
+
+
+  </section>
+  <form id ="form" method ="POST">
+    <h5>Make A Connect?? </h5>
+    <input type="submit" name="submit" value="Connect"class="connect">
+
+
+
+
+  </form>
+
+  <section class="contactform">
+
+  </section>
+
 
 
   <section class="footer">
