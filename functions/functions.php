@@ -1,20 +1,22 @@
 <?php
-include "../database/database.php";
 
-function cleanser (string){
-  global $datbase;
-  return $database->real_escape_string($string);
+
+function cleanser ($string){
+  global $database;
+  $string =$database->real_escape_string($string)
+  return $string ;
 }
 
 function query ($sql){
 global $database ;
-return $database->query($sql);
+$sql= $database->query($sql);
+$sql=confirm_query($sql);
 }
 function confirm_query($query){
   global $database ;
  if(!$query){
-   exit("no connection could be made to ");
- }elae{
+   exit("no connection could be made to database");
+ }else{
    return $query ;
  }
 }

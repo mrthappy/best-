@@ -44,4 +44,22 @@ $(document).ready(function(){
   self.toggleClass("active");
 });
 
+let contactbtn =$(".contactf");
+contactbtn.submit(function(event){
+  event.preventDefault();
+  // get hte form itself
+  let $form =$(".contactform");
+  let formData =$form.serialize();
+  $.ajax({
+    method:"POST",
+    url:   "contact.php",
+    dataType:"json",
+    data:formData
+  }).done(function(data){
+    // get the errors here
+     let  $data =data ;
+     console.log($data);
+  })
+});
+
 });

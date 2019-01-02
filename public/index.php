@@ -74,7 +74,7 @@ include "../database/database.php";
       <input type ="text" name="firstname" class="inputtag" placeholder="firstname">
         <input type ="text" name="lastname" class="inputtag" placeholder="lastname">
           <input type ="text" name="email" class="inputtag" placeholder="email">
-            <input type ="textarea" name="textarea" class="area" placeholder="Message">
+            <input type ="textarea" name="message" class="area" placeholder="Message">
               <input type ="submit" name="submit" class="inputtags" value="submit">
 
       </form>

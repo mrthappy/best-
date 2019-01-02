@@ -10,20 +10,24 @@ if($database->connect_errno){
   $message.=  "(" . $database->connect_errno.")";
   exit($message);
 }
+function cleanser ($string){
+  global $database;
+  return $database->real_escape_string($string);
+}
+
+function query ($sql){
+global $database ;
+$sql= $database->query($sql);
+$sql=confirm_query($sql);
+}
+function confirm_query($query){
+  global $database ;
+ if(!$query){
+   exit("no connection could be made to ");
+ }else{
+   return $query ;
+ }
+}
+
 
 ?>
-
-<?php
-class Database{
-var $id;
-function hello  (){
-  echo "hello this is a method ";
-}
-}
-
-
-
-
-
- ?>
-
