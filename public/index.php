@@ -58,25 +58,48 @@ include "../database/database.php";
 
   </section>
   <section class="connection" data-role="contact_details">
-    <?php
-        if(isset($_GET["contactPage"])):
-          console.log("dddjd");
+    <section class="contact1">
+    <div class="divider">
+      <h3>BEST ADVICE</h3>
+      <a href="team.php">Meet our Team </a>
+    </div>
+    <div class="contactf">
 
 
-        endif;
+    <form name="contactform" class="contactform"  method="POST" action="contact.php">
+      <span class="close">X</span>
 
-    ?>
-    <form id ="form" method ="GET">
-      <h5>Make A Connect?? </h5>
-      <input type="submit" name="submit" value="Connect"class="connect">
+      <h1>Write Us An Email</h1>
+      <div class="messagediv"></div>
+      <input type ="text" name="firstname" class="inputtag" placeholder="firstname">
+        <input type ="text" name="lastname" class="inputtag" placeholder="lastname">
+          <input type ="text" name="email" class="inputtag" placeholder="email">
+            <input type ="textarea" name="textarea" class="area" placeholder="Message">
+              <input type ="submit" name="submit" class="inputtags" value="submit">
+
+      </form>
+    </div>
+  </section>
+  <script>
+  let closebtn=document.querySelector(".close");
+  closebtn.addEventListener("click",CloseMenu);
+  function CloseMenu(){
+  console.log("this is the best");
+  }
+
+  </script>
 
 
-
-
-    </form>
-        <a href="connect.php?contactPage=contactpage" class="connects">connect</a>
 
   </section>
+  <form id ="form" method ="POST">
+    <h5>Make A Connect?? </h5>
+    <input type="submit" name="submit" value="Connect"class="connect">
+
+
+
+
+  </form>
 
   <section class="contactform">
 
