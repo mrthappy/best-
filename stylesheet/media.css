@@ -1,0 +1,8 @@
+@media screen and(min-width:850px){
+  .contact1{
+    flex-direction:row;
+  }
+  .divider{
+    flex:50%;
+  }
+}

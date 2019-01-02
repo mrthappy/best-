@@ -44,12 +44,13 @@ $(document).ready(function(){
   self.toggleClass("active");
 });
 
-let contactbtn =$(".contactf");
-contactbtn.submit(function(event){
+let $contactbtn =$(".contactf");
+$contactbtn.submit(function(event){
   event.preventDefault();
+  let self=$(this);
   // get hte form itself
   let $form =$(".contactform");
-  let formData =$form.serialize();
+  let formData =self.serialize();
   $.ajax({
     method:"POST",
     url:   "contact.php",
