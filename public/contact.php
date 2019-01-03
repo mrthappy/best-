@@ -1,43 +1,38 @@
 <?php
 include "../database/database.php";
 
-$firstname =isset($_POST["firstname"])?cleanser($_POST["firstname"]):" ";
-$lastname =isset($_POST["lastname"])?cleanser($_POST["lastname"]):" ";
-$email =isset($_POST["email"])?cleanser(filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)):" ";
+$firstname =isset($_POST["firstname"])?cleanser($_POST["firstname"]):"" ;
+$lastname =isset($_POST["lastname"])?cleanser($_POST["lastname"]):"";
+$email =isset($_POST["email"])?cleanser(filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)):"";
 $message =isset($_POST["message"])?cleanser($_POST["message"]):"";
-echo $message;
-$error=[];
-$data =[];
+
+$error=array();
+$data =array();
+$message=array();
 // checking for errors
 if(empty($firstname)):
-  $error["firstname"]="firstname required";
-
-  endif ;
+  $error["firstname"]="the firstname is required";
+endif;
 
 if(empty($lastname)):
-  $error["lastname"]="lastname is required";
+  $error["lastname"]="the lastname is required";
 endif;
+
 if(empty($email)):
-  $error["email"]="email needed";
+  $error["email"]="the email is required";
 endif;
+
 if(empty($message)):
-  $error["message"]="message is required";
+  $error["message"]="the message is required";
 endif;
 
-if(!empty($error)):
-  // pile up the erros and create a new array holding the data
-  $data=array("fail"=>$error);
-  echo json_encode($data);
-else:
-    $insert ="INSERT INTO contact(firstname,lastname,email,message) VALUES('$firstname','$lastname','$email','$message')";
-    $query=query($insert);
-    if($query){
-      $data=array("success"=>"Thanks for the time");
-      echo json_encode($data);
-    }
-
-
-endif;
+if(!empty($error)){
+$data=array("fail"=>$error);
+  echo json_encode($data) ;
+}else{
+  $message =array("success"=>"thank you")
+  echo json_encode($message);
+}
 
 
 
