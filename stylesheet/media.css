@@ -1,8 +1,32 @@
-@media screen and(min-width:850px){
-  .contact1{
-    flex-direction:row;
-  }
-  .divider{
-    flex:50%;
-  }
+@media screen and (min-width:800px){
+.contact1{
+  flex-direction:row;
+  flex-wrap:nowrap;
+}
+.divider{
+    margin-bottom:0;
+    width:45%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+
+
+}
+.divider h3{
+margin-top:50%;
+font-size:3rem;
+}
+.contactf{
+  width:50%;
+  margin-top: 100px ;
+}
+
+
+.close{
+
+  color:#1fd3c6;
+  font-size:3rem;
+  position:absolute;
+  right:50px;
+  top:35px;
 }

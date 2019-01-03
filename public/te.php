@@ -169,6 +169,20 @@ width:100%;
   </div>
 </section>
 <script>
+function loopinput (input){
+  let form=forms =document.querySelector ("form");
+  let array=[];
+  let inputs=document.querySelectorAll(".inputtag");
+  inputs.forEach(function(index,value,inputs){
+    var inputName=index.name ;
+    array.push(inputName);
+
+  })
+  return array.join(":");
+
+}
+var a =loopinput();
+console.log(a);
 
 
 </script>

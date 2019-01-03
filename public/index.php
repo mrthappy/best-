@@ -62,7 +62,7 @@ include "../database/database.php";
     <section class="contact1">
     <div class="divider">
       <h3>BEST ADVICE</h3>
-      <a href="team.php">Meet our Team </a>
+      <a href="team.php?team">Meet our Team </a>
     </div>
     <div class="contactf">
 
