@@ -44,23 +44,22 @@ $(document).ready(function(){
   self.toggleClass("active");
 });
 
-let $contactbtn =$(".contactf");
-$contactbtn.submit(function(event){
-  event.preventDefault();
-  let self=$(this);
-  // get hte form itself
-  let $form =$(".contactform");
-  let formData =self.serialize();
+let $contactbtn =$(".contactform");
+
+$contactbtn.submit(function(e){
+  e.preventDefault();
+  let $action=$contactbtn.attr("action");
+  let $method=$contactbtn.attr("method");
+  let FormData = $contactbtn.serialize();
   $.ajax({
-    method:"POST",
-    url:   "contact.php",
-    dataType:"json",
-    data:formData
+    url:$action,
+    method:$method,
+    data:FormData,
+    dataType:"json"
   }).done(function(data){
-    // get the errors here
-     let  $data =data ;
-     console.log($data);
-  })
-});
+    let $data =data;
+    console.log($data);
+  });
+})
 
 });
