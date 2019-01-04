@@ -106,13 +106,9 @@ crossorigin="anonymous"></script>
 
 
   </section>
-  <form id ="form" method ="POST">
+  <form id ="forms" method ="POST">
     <h5>Make A Connect?? </h5>
     <input type="submit" name="submit" value="Connect"  class="connect">
-
-
-
-
   </form>
 
   <section class="contactform">

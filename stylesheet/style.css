@@ -269,7 +269,7 @@ z-index:1;
   padding-left: 60px;
   transition: all .5s ease-in;
 }
-.inputtags{
+.inputtags,.connect{
   display:block;
   outline:none;
   width:100%;
@@ -281,6 +281,16 @@ z-index:1;
   margin-top:1rem;
   text-transform:uppercase;
 
+}
+.connect{
+  width:20%;
+  margin-left:45%;
+}
+#forms{
+  margin :0 auto;
+  width:70%;
+  text-align:center;
+  color:#1fd3c6;
 }
 .area{
   width:100%;
