@@ -13,7 +13,10 @@ include "../database/database.php";
 
     <!--  <link rel="stylesheet"  type="text/css"  href="../stylesheet/newcss.css">-->
 
-
+    <script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
      <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -36,7 +39,7 @@ include "../database/database.php";
 
   </section>
   <div id="welcome_text">
-    <h1>We are a small Team obsessed with producing the best models the world has never seen</h2>
+    <h1>We are a small Team obsessed with producing the best models the world has never seen</h1>
   </div>
   <section class="photo_grid">
     <div class="img_holder">
@@ -95,7 +98,7 @@ include "../database/database.php";
   </section>
   <form id ="form" method ="POST">
     <h5>Make A Connect?? </h5>
-    <input type="submit" name="submit" value="Connect"class="connect">
+    <input type="submit" name="submit" value="Connect"  class="connect">
 
 
 

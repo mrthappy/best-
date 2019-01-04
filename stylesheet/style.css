@@ -23,7 +23,7 @@ span{
 body{
   background: #353535;
   font-family: 'Thasadith', sans-serif;
-  color:white;
+
 }
 .main_header{
   max-width:100%;
@@ -157,7 +157,17 @@ transition:all ease 2s;
 display:none;
 }
 
+.errors{
 
+  font-size:1.2em;
+  color:red;
+  transition:all ease-in .5s;
+}
+
+.inputtag.error,.area.error{
+
+  border:2px solid red;
+}
 
 .close{
 

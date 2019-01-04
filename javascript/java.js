@@ -46,19 +46,34 @@ $(document).ready(function(){
 
 let $contactbtn =$(".contactform");
 
+function clearErrors(){
+  $(".inputtag").removeClass("error");
+  $('.area').removeClass("error");
+  $('p.errors').remove();
+}
+
 $contactbtn.submit(function(e){
   e.preventDefault();
+  clearErrors();
   let $action=$contactbtn.attr("action");
   let $method=$contactbtn.attr("method");
   let FormData = $contactbtn.serialize();
   $.ajax({
     url:$action,
     method:$method,
-    data:FormData,
-    dataType:"json"
-  }).done(function(data){
-    let $data =data;
-    console.log($data);
+    data:FormData
+
+  }).then(function(data){
+      let response =data;
+      if(response.hasOwnProperty("fail")){
+       $.each(response.fail,function(index,value){
+        let paragraph = `<p class="errors">${value}</p>`;
+        $('input[name="'+index+'"]').addClass("error").after(paragraph);
+          $('textarea[name="'+index+'"]').addClass("error").after(paragraph);
+
+       })
+     }
+
   });
 })
 
