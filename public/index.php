@@ -36,6 +36,16 @@ crossorigin="anonymous"></script>
     </div>
 
     </header>
+    <nav id="main_navigation">
+      <span class="nav_close">X</span>
+      <ul class="nav_menu">
+        <li><a href="#" class="anchors">Home</a></li>
+          <li><a href="#" class="anchors">Home</a></li>
+            <li><a href="#" class="anchors">Home</a></li>
+              <li><a href="#" class="anchors">Home</a></li>
+
+      </ul>
+    </nav>
 
   </section>
   <div id="welcome_text">

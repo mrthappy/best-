@@ -28,10 +28,14 @@ if(empty($message)){
 if(!empty($error)){
   $data["fail"]=$error;
   echo json_encode($data);
+  exit();
 }else{
+
   $data["success"]="thank you";
    echo json_encode($data);
+   exit();
 }
+
 
 
 

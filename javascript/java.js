@@ -72,9 +72,20 @@ $contactbtn.submit(function(e){
           $('textarea[name="'+index+'"]').addClass("error").after(paragraph);
 
        })
+     }else{
+
+       console.log(response.success);
      }
 
+
   });
+})
+  let anchors =$(".anchors");
+
+anchors.each(function (index){
+  setTimeout(function(){
+    anchors.eq(index).addClass("translate")
+  },50*(index+20));
 })
 
 });
