@@ -17,17 +17,23 @@ function Weather(){
 }
 
 
+
 $(document).ready(function(){
   let closebtn=document.querySelector(".close");
   closebtn.addEventListener("click",CloseMenu);
   function CloseMenu(){
     let service =false;
+  let inputtags =document.querySelector(".inputtag");
+
+
   let connection = document.querySelector(".connection");
   connection.classList.remove("appear");
   service =true;
   }
 
   let btn =$(".connect");
+  $(".inputtag").val("");
+  $(".area").val("");
 
 
   btn.click(function(event){
@@ -73,18 +79,28 @@ $contactbtn.submit(function(e){
 
        })
      }else{
-            return setTimeout(function(){
+
               $messagediv =$(".messagediv");
-              $messagediv.html(response.success);
-              $(".inputtag").val("");
-              $(".area").val("");
-                 console.log(response.success);
-            },1500)
+              $messagediv.fadeIn(500).html(response.success);
+
+                            $(".inputtag").val("");
+                            $(".area").val("");
+                            setTimeout(function(){
+                              $messagediv.fadeOut(500);
+
+                            },1000);
+
+
+
+
+
+
      }
 
 
   });
 })
+
   let anchors =$(".anchors");
 
 anchors.each(function (index){

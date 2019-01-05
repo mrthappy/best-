@@ -85,7 +85,7 @@ crossorigin="anonymous"></script>
 
       <h1>Write Us An Email</h1>
       <div class="messagediv"></div>
-      <input type ="text" name="firstname" class="inputtag" placeholder="firstname">
+      <input type ="text" name="firstname" class="inputtag" placeholder="firstname"value="<?php isset($_POST["firstname"])?$_POST["firstname"]:"";?>">
         <input type ="text" name="lastname" class="inputtag" placeholder="lastname">
           <input type ="text" name="email" class="inputtag" placeholder="email">
             <input type ="textarea" name="message" class="area" placeholder="Message">
@@ -96,9 +96,9 @@ crossorigin="anonymous"></script>
   </section>
 
   </section>
-  <form id ="forms" method ="POST">
+  <div id ="forms">
     <h5>Make A Connect?? </h5>
-    <input type="submit" name="submit" value="Connect"  class="connect">
+    <a href ="#" class ="connect">Connect</a>
   </form>
 
   <section class="contactform">
