@@ -1,5 +1,5 @@
 <?php
-/*header("Content-Type: application/json");*/
+header("Content-Type: application/json");
 include "../database/database.php";
 
 $firstname =isset($_POST["firstname"])?cleanser($_POST["firstname"]):"" ;

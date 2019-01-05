@@ -21,7 +21,7 @@ $sql= $database->query($sql);
 $sql=confirm_query($sql);
 }
 function confirm_query($query){
-  global $database ;
+  
  if(!$query){
    exit("no connection could be made to ");
  }else{

@@ -22,10 +22,22 @@ $(document).ready(function(){
   let closebtn=document.querySelector(".close");
   closebtn.addEventListener("click",CloseMenu);
   function CloseMenu(){
-    let service =false;
-  let inputtags =document.querySelector(".inputtag");
+  let service =false;
+  let messagediv=document.querySelectorAll(".errors");
+  for(let j=0;j <messagediv.length;j++){
+    messagediv[j].remove();
+  }
+  let inputtags= document.querySelectorAll(".inputtag");
+  for(let i =0;i <inputtags.length;i++){
+    if(inputtags[i].value!=""){
+      inputtags[i].value="";
 
+    }else if(inputtags[i].classList.contains("error")){
+      inputtags[i].classList.remove("error");
 
+    }
+
+  }
   let connection = document.querySelector(".connection");
   connection.classList.remove("appear");
   service =true;
