@@ -75,7 +75,7 @@ crossorigin="anonymous"></script>
     <section class="contact1">
     <div class="divider">
       <h3>BEST ADVICE</h3>
-      <a href="team.php?team">Meet our Team </a>
+      <a href="team.php?team"class="teamlink">Meet our Team </a>
     </div>
     <div class="contactf">
 
@@ -94,16 +94,6 @@ crossorigin="anonymous"></script>
       </form>
     </div>
   </section>
-  <script>
-  let closebtn=document.querySelector(".close");
-  closebtn.addEventListener("click",CloseMenu);
-  function CloseMenu(){
-  console.log("this is the best");
-  }
-
-  </script>
-
-
 
   </section>
   <form id ="forms" method ="POST">

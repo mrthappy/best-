@@ -47,8 +47,8 @@ $(document).ready(function(){
 let $contactbtn =$(".contactform");
 
 function clearErrors(){
-  $(".inputtag").removeClass("error");
-  $('.area').removeClass("error");
+  $(".inputtag.error").removeClass("error");
+  $('.area.error').removeClass("error");
   $('p.errors').remove();
 }
 
@@ -73,8 +73,13 @@ $contactbtn.submit(function(e){
 
        })
      }else{
-
-       console.log(response.success);
+            return setTimeout(function(){
+              $messagediv =$(".messagediv");
+              $messagediv.html(response.success);
+              $(".inputtag").val("");
+              $(".area").val("");
+                 console.log(response.success);
+            },1500)
      }
 
 
@@ -87,5 +92,6 @@ anchors.each(function (index){
     anchors.eq(index).addClass("translate")
   },50*(index+20));
 })
+
 
 });

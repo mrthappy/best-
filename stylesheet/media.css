@@ -37,6 +37,7 @@ font-size:3rem;
   flex-direction:row;
   margin:0 auto;
   flex-wrap:wrap;
+
 }
 .img_holder {
 margin-bottom:.2rem;
@@ -68,6 +69,10 @@ transition:all ease-in .8s;
   vertical-align:middle;
   color:#1fd3c6;
 
+}
+#forms{
+  margin-top:2em;
+  margin-bottom:2em;
 }
 
 }

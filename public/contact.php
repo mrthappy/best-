@@ -31,7 +31,7 @@ if(!empty($error)){
   exit();
 }else{
 
-  $data["success"]="thank you";
+  $data["success"]="thank you for your message";
    echo json_encode($data);
    exit();
 }
