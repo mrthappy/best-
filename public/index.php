@@ -26,28 +26,8 @@ crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body>
-  <section class ="main_header" data-role="header_holder">
-    <header class="header">
-    <div class ="logo">
-      <img src="../images/newlogo-Recovered.png">
-    </div>
-    <div id="hamburger">
-      <span class="burger_icon"></span>
-    </div>
+  <?php include "pageheader.php";?>
 
-    </header>
-    <nav id="main_navigation">
-      <span class="nav_close">X</span>
-      <ul class="nav_menu">
-        <li><a href="#" class="anchors">Home</a></li>
-          <li><a href="#" class="anchors">Home</a></li>
-            <li><a href="#" class="anchors">Home</a></li>
-              <li><a href="#" class="anchors">Home</a></li>
-
-      </ul>
-    </nav>
-
-  </section>
   <div id="welcome_text">
     <h1>We are a small Team obsessed with producing the best models the world has never seen</h1>
   </div>
@@ -75,7 +55,7 @@ crossorigin="anonymous"></script>
     <section class="contact1">
     <div class="divider">
       <h3>BEST ADVICE</h3>
-      <a href="team.php?team"class="teamlink">Meet our Team </a>
+      <a href="team.php?team=thhth"class="teamlink">Meet our Team </a>
     </div>
     <div class="contactf">
 

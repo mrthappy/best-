@@ -18,7 +18,8 @@ function cleanser ($string){
 function Query ($sql){
 global $database ;
 $sql= $database->query($sql);
-$sql=confirm_query($sql);
+$result =confirm_query($sql);
+return $result;
 }
 function confirm_query($query){
 
@@ -27,11 +28,6 @@ function confirm_query($query){
  }else{
    return $query ;
  }
-}
-function queri($sql){
-  global $database;
-  $sql =$datbase->query($sql);
-  return $sql;
 }
 
 

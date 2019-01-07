@@ -4,6 +4,6 @@
 define("DB_SERVER", "localhost");
  define("DB_ROOT", "root");
  define("DB_PASSWORD", "");
- define("DB_DATABASE", "trial");
+ define("DB_DATABASE", "kardystudio");
 
 ?>

@@ -24,6 +24,8 @@ $(document).ready(function(){
   function CloseMenu(){
   let service =false;
   let messagediv=document.querySelectorAll(".errors");
+  let textarea =document.querySelector(".area");
+  textarea.classList.remove("error");
   for(let j=0;j <messagediv.length;j++){
     messagediv[j].remove();
   }
