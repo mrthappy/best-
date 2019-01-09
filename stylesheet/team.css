@@ -13,14 +13,13 @@ body{
   text-align:center;
   display:flex;
   flex-wrap:wrap;
-  justify-content:space-between;
   padding-left:10px;
 
 
 }
 .figure{
-  width:300px;
-  height:300px;
+  width:250px;
+  height:250px;
   background:orange;
   border-radius:50%;
   background:#1fd3c6;;
@@ -28,29 +27,47 @@ body{
   display:flex;
   flex-direction:column;
   transition:all ease-in-out .4s;
+  margin-left:20px;
 
 
+
+}
+.figure:last-child{
+  margin-bottom:0;
 }
 .figure p {
   color:white;
   font-size:0.98em;
+  font-style:italic;
+  text-transform:uppercase;
 }
 .figure img {
   border-radius:50%;
-  width:300px;
+  width:100%;
   display:block;
-  height:300px;
-  animation:spinny 3s ease-in;
+  height:250px;
+  animation:spinny 4s ease-in-out;
+  cursor:pointer;
+  -webkit-cursor:pointer;
+  -ms-cursor:pointer;
+
 
 }
 
+
 @keyframes spinny{
+
   0%{
     transform:rotate(0deg);
     transform:scale(1.2);
   }
   50%{
-    transform:rotate(304deg);
+    transform:rotate(120deg);
     transform:scale(1.2);
   }
+  100%{
+    transform:rotate(360deg);
+    transform:translate3d(20);
+  }
+
 }

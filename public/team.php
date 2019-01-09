@@ -35,41 +35,47 @@ $result=Query($query);
  <body>
    <?php include "pageheader.php";?>
 
-   </section>
+
 
    <section class="wrappers">
      <section class="fotos">
       <div class="figure">
         <img src="../images/team3.jpg">
-        <p>Lead Directior</p>
+        <p>John</p>
+        <p>Lead Dsigner</p>
 
     </div>
 
     <div class="figure">
       <img src="../images/team2.jpg">
-      <p>Lead Directior</p>
+      <p>John</p>
+      <p>Lead Dsigner</p>
 
   </div>
 
   <div class="figure">
     <img src="../images/team3.jpg">
-    <p>Lead Directior</p>
+    <p>John</p>
+    <p>Lead Dsigner</p>
 
 </div>
 
 <div class="figure">
   <img src="../images/team.jpg">
-  <p>Lead Directior</p>
+  <p>John</p>
+  <p>Lead Dsigner</p>
 
 </div>
 <div class="figure">
   <img src="../images/team3.jpg">
-<p>Lead Directior</p>
+  <p>John</p>
+  <p>Lead Dsigner</p>
 </div>
 
 <div class="figure">
   <img src="../images/team4.jpg">
-  <p>Lead Directior</p>
+  <p>John</p>
+  <p>Lead Dsigner</p>
 
 </div>
 

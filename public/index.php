@@ -52,6 +52,7 @@ crossorigin="anonymous"></script>
 
   </section>
   <section class="connection" data-role="contact_details">
+    <div class="memberteam"></div>
     <section class="contact1">
     <div class="divider">
       <h3>BEST ADVICE</h3>
