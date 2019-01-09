@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: application/json");
 include "../database/database.php";
 
 $firstname =isset($_POST["firstname"])?cleanser($_POST["firstname"]):"" ;
@@ -7,34 +8,33 @@ $email =isset($_POST["email"])?cleanser(filter_var($_POST["email"],FILTER_VALIDA
 $message =isset($_POST["message"])?cleanser($_POST["message"]):"";
 
 $error=array();
-$data =array();
-$message=array();
-// checking for errors
-if(empty($firstname)):
-  $error["firstname"]="the firstname is required";
-endif;
 
-if(empty($lastname)):
-  $error["lastname"]="the lastname is required";
-endif;
+$data=array();
 
-if(empty($email)):
-  $error["email"]="the email is required";
-endif;
-
-if(empty($message)):
-  $error["message"]="the message is required";
-endif;
-
-if(!empty($error)){
-$data=array("fail"=>$error);
-  echo json_encode($data) ;
-}else{
-  $message =array("success"=>"thank you")
-  echo json_encode($message);
+if(empty($firstname)){
+  $error["firstname"]= "firstname required";
 }
 
+if(empty($lastname)){
+  $error["lastname"] ="lastname is required";
+}
+if(empty($email)){
+  $error["email"] ="Email is required";
+}
 
+if(empty($message)){
+  $error["message"] =" Message is required";
+}
+if(!empty($error)){
+  $data["fail"]=$error;
+  echo json_encode($data);
+  exit();
+}else{
+
+  $data["success"]="thank you for your message";
+   echo json_encode($data);
+   exit();
+}
 
 
 

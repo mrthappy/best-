@@ -13,7 +13,10 @@ include "../database/database.php";
 
     <!--  <link rel="stylesheet"  type="text/css"  href="../stylesheet/newcss.css">-->
 
-
+    <script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
      <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,20 +26,10 @@ include "../database/database.php";
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body>
-  <section class ="main_header" data-role="header_holder">
-    <header class="header">
-    <div class ="logo">
-      <img src="../images/newlogo-Recovered.png">
-    </div>
-    <div id="hamburger">
-      <span class="burger_icon"></span>
-    </div>
+  <?php include "pageheader.php";?>
 
-    </header>
-
-  </section>
   <div id="welcome_text">
-    <h1>We are a small Team obsessed with producing the best models the world has never seen</h2>
+    <h1>We are a small Team obsessed with producing the best models the world has never seen</h1>
   </div>
   <section class="photo_grid">
     <div class="img_holder">
@@ -59,10 +52,11 @@ include "../database/database.php";
 
   </section>
   <section class="connection" data-role="contact_details">
+    <div class="memberteam"></div>
     <section class="contact1">
     <div class="divider">
       <h3>BEST ADVICE</h3>
-      <a href="team.php?team">Meet our Team </a>
+      <a href="team.php?team=thhth"class="teamlink">Meet our Team </a>
     </div>
     <div class="contactf">
 
@@ -72,7 +66,7 @@ include "../database/database.php";
 
       <h1>Write Us An Email</h1>
       <div class="messagediv"></div>
-      <input type ="text" name="firstname" class="inputtag" placeholder="firstname">
+      <input type ="text" name="firstname" class="inputtag" placeholder="firstname"value="<?php isset($_POST["firstname"])?$_POST["firstname"]:"";?>">
         <input type ="text" name="lastname" class="inputtag" placeholder="lastname">
           <input type ="text" name="email" class="inputtag" placeholder="email">
             <input type ="textarea" name="message" class="area" placeholder="Message">
@@ -81,25 +75,11 @@ include "../database/database.php";
       </form>
     </div>
   </section>
-  <script>
-  let closebtn=document.querySelector(".close");
-  closebtn.addEventListener("click",CloseMenu);
-  function CloseMenu(){
-  console.log("this is the best");
-  }
-
-  </script>
-
-
 
   </section>
-  <form id ="form" method ="POST">
+  <div id ="forms">
     <h5>Make A Connect?? </h5>
-    <input type="submit" name="submit" value="Connect"class="connect">
-
-
-
-
+    <a href ="#" class ="connect">Connect</a>
   </form>
 
   <section class="contactform">

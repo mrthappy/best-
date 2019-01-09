@@ -13,7 +13,6 @@ $sql= $database->query($sql);
 $sql=confirm_query($sql);
 }
 function confirm_query($query){
-  global $database ;
  if(!$query){
    exit("no connection could be made to database");
  }else{
@@ -21,6 +20,11 @@ function confirm_query($query){
  }
 }
 
+function queri($sql){
+  global $database;
+  $sql =$datbase->query($sql);
+  return $sql;
+}
 
 
  ?>

@@ -1,3 +1,5 @@
+<?php include "../database/datbase.php";
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -139,50 +141,53 @@ width:100%;
   margin-top:10px;
   text-transform:uppercase;
 }
+div{background:black;}
 
-
+}
+input {
+  display:block;
+  background-color:transparent;
+  outline:none;
+  border:1px solid transparent;
+  color:white;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
   <section class="contact1">
+    <div class="message"></div>
   <div class="divider">
     <h3>BEST ADVICE</h3>
-    <a href="team.php">Meet our Team </a>
+<form method="get"name="form" >
+
+  <input type="submit" value="get  advice">
+</form>
   </div>
-  <div class="contactf">
 
 
-  <form name="contactform" class="contactform"  method="POST" action="contact.php">
-    <span class="close">X</span>
-
-    <h1>Write Us An Email</h1>
-    <div class="messagediv"></div>
-    <input type ="text" name="firstname" class="inputtag" placeholder="firstname">
-      <input type ="text" name="lastname" class="inputtag" placeholder="lastname">
-        <input type ="text" name="email" class="inputtag" placeholder="email">
-          <input type ="textarea" name="textarea" class="area" placeholder="Message">
-            <input type ="submit" name="submit" class="inputtags" value="submit">
-
-    </form>
-  </div>
 </section>
 <script>
-function loopinput (input){
-  let form=forms =document.querySelector ("form");
-  let array=[];
-  let inputs=document.querySelectorAll(".inputtag");
-  inputs.forEach(function(index,value,inputs){
-    var inputName=index.name ;
-    array.push(inputName);
 
-  })
-  return array.join(":");
-
-}
-var a =loopinput();
-console.log(a);
+let anchor =document.querySelector("form");
+let container=document.querySelector(".message");
+anchor.addEventListener("submit",function(event){
+  event.preventDefault();
+  let pragment=anchor.name;
+  console.log(pragment);
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET","./teaml.php?pragment="+pragment);
+  xhr.onreadystatechange =function (){
+    if (xhr.readyState==4&& xhr.status==200){
+      console.log(xhr.responseText);
+      let paragraph =document.createElement("p");
+      paragraph.innerHTML=xhr.responseText;
+      container.appendChild(paragraph);
+    }
+  }
+  xhr.send();
+});
 
 
 </script>

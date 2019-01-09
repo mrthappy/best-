@@ -15,13 +15,14 @@ function cleanser ($string){
   return $database->real_escape_string($string);
 }
 
-function query ($sql){
+function Query ($sql){
 global $database ;
 $sql= $database->query($sql);
-$sql=confirm_query($sql);
+$result =confirm_query($sql);
+return $result;
 }
 function confirm_query($query){
-  global $database ;
+
  if(!$query){
    exit("no connection could be made to ");
  }else{
