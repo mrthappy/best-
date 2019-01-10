@@ -1,14 +1,4 @@
-<?php
-include "../database/database.php";
-$team =isset($_GET["team"])?htmlspecialchars(htmlentities(cleanser($_GET["team"]))):"";
-$query ="SELECT *FROM team";
-$result=Query($query);
 
-
-
-
-
-?>
  <!DOCTYPE html>
  <html lang="en" >
  <head>
@@ -36,11 +26,49 @@ $result=Query($query);
    <?php include "pageheader.php";?>
 
 
+   <?php
 
+    if(isset($_GET["team"])){
+      include "../database/database.php";
+
+      $team =htmlspecialchars(cleanser($_GET["team"]));
+      $sql ="SELECT * FROM team  ";
+      $result =Query($sql);
+
+
+
+
+
+    }
+   ?>
    <section class="wrappers">
+     <?php
+     while ($row =$result->fetch_assoc()){
+
+
+     ?>
      <section class="fotos">
-      <div class="figure">
-        <img src="../images/team3.jpg">
+
+       <?php
+
+       echo "<div class=\"figure\">";
+       echo '<img src="../images/'.$row["team_image"].'">';
+       echo "<p>" . $row["firstname"]. "</p>";
+       echo "<p>" . "Lead Designer". "</p>";
+       echo "</div>";
+       ?>
+
+     </section>
+ <?php }?>
+   </section>
+
+
+<!--
+   <section class="wrappers">
+
+     <section class="fotos">
+       <div class="figure">
+      <img src="../images/team3.jpg">
         <p>John</p>
         <p>Lead Dsigner</p>
 
@@ -79,9 +107,10 @@ $result=Query($query);
 
 </div>
 
-
      </section>
+
    </section>
+-->
    <?php include "footer.php";?>
 
  </body>
