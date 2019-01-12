@@ -1,14 +1,4 @@
-<?php
-include "../database/database.php";
-$team =isset($_GET["team"])?htmlspecialchars(htmlentities(cleanser($_GET["team"]))):"";
-$query ="SELECT *FROM team";
-$result=Query($query);
 
-
-
-
-
-?>
  <!DOCTYPE html>
  <html lang="en" >
  <head>
@@ -33,56 +23,70 @@ $result=Query($query);
  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
  </head>
  <body>
+
    <?php include "pageheader.php";?>
 
 
+    <?php
 
+    if(isset($_GET["team"])){
+      include "../database/database.php";
+
+      $team =htmlspecialchars(cleanser($_GET["team"]));
+
+    }
+   ?>
    <section class="wrappers">
-     <section class="fotos">
-      <div class="figure">
-        <img src="../images/team3.jpg">
-        <p>John</p>
-        <p>Lead Dsigner</p>
+    <?php
 
-    </div>
+   switch($team){
+     case 1:
+     include "tes.php";
+     break;
+     case  2:
+     include "tes.php";
+     break;
+     case  3:
+     include "tes.php";
+     break;
 
-    <div class="figure">
-      <img src="../images/team2.jpg">
-      <p>John</p>
-      <p>Lead Dsigner</p>
+     case  4:
+     include "tes.php";
+     break;
+     case  5:
+     include "tes.php";
+     break;
+     case  6:
+     include "tes.php";
+     break;
+     default:
+     include "member.php";
 
-  </div>
 
-  <div class="figure">
-    <img src="../images/team3.jpg">
-    <p>John</p>
-    <p>Lead Dsigner</p>
+   }
 
-</div>
 
-<div class="figure">
-  <img src="../images/team.jpg">
-  <p>John</p>
-  <p>Lead Dsigner</p>
 
-</div>
-<div class="figure">
-  <img src="../images/team3.jpg">
-  <p>John</p>
-  <p>Lead Dsigner</p>
-</div>
 
-<div class="figure">
-  <img src="../images/team4.jpg">
-  <p>John</p>
-  <p>Lead Dsigner</p>
-
-</div>
+    ?>
 
 
      </section>
+
    </section>
+
+   <div class="div">
+   </div>
+
+
+
+
    <?php include "footer.php";?>
 
+
  </body>
+ <script>
+
+ </script>
+
  </html>
