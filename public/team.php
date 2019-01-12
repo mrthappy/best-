@@ -23,95 +23,70 @@
  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
  </head>
  <body>
+
    <?php include "pageheader.php";?>
 
 
-   <?php
+    <?php
 
     if(isset($_GET["team"])){
       include "../database/database.php";
 
       $team =htmlspecialchars(cleanser($_GET["team"]));
-      $sql ="SELECT * FROM team  ";
-      $result =Query($sql);
-
-
-
-
 
     }
    ?>
    <section class="wrappers">
-     <?php
-     while ($row =$result->fetch_assoc()){
+    <?php
+
+   switch($team){
+     case 1:
+     include "tes.php";
+     break;
+     case  2:
+     include "tes.php";
+     break;
+     case  3:
+     include "tes.php";
+     break;
+
+     case  4:
+     include "tes.php";
+     break;
+     case  5:
+     include "tes.php";
+     break;
+     case  6:
+     include "tes.php";
+     break;
+     default:
+     include "member.php";
 
 
-     ?>
-     <section class="fotos">
-
-       <?php
-
-       echo "<div class=\"figure\">";
-       echo '<img src="../images/'.$row["team_image"].'">';
-       echo "<p>" . $row["firstname"]. "</p>";
-       echo "<p>" . "Lead Designer". "</p>";
-       echo "</div>";
-       ?>
-
-     </section>
- <?php }?>
-   </section>
+   }
 
 
-<!--
-   <section class="wrappers">
 
-     <section class="fotos">
-       <div class="figure">
-      <img src="../images/team3.jpg">
-        <p>John</p>
-        <p>Lead Dsigner</p>
 
-    </div>
+    ?>
 
-    <div class="figure">
-      <img src="../images/team2.jpg">
-      <p>John</p>
-      <p>Lead Dsigner</p>
-
-  </div>
-
-  <div class="figure">
-    <img src="../images/team3.jpg">
-    <p>John</p>
-    <p>Lead Dsigner</p>
-
-</div>
-
-<div class="figure">
-  <img src="../images/team.jpg">
-  <p>John</p>
-  <p>Lead Dsigner</p>
-
-</div>
-<div class="figure">
-  <img src="../images/team3.jpg">
-  <p>John</p>
-  <p>Lead Dsigner</p>
-</div>
-
-<div class="figure">
-  <img src="../images/team4.jpg">
-  <p>John</p>
-  <p>Lead Dsigner</p>
-
-</div>
 
      </section>
 
    </section>
--->
+
+   <div class="div">
+   </div>
+
+
+
+
    <?php include "footer.php";?>
 
+
  </body>
+ <script>
+
+ </script>
+
  </html>

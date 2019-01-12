@@ -56,7 +56,7 @@ crossorigin="anonymous"></script>
     <section class="contact1">
     <div class="divider">
       <h3>BEST ADVICE</h3>
-      <a href="team.php?team=thhth"class="teamlink">Meet our Team </a>
+      <a href="team.php?team=teammember"class="teamlink">Meet our Team </a>
     </div>
     <div class="contactf">
 
