@@ -88,8 +88,8 @@ $contactbtn.submit(function(e){
       if(response.hasOwnProperty("fail")){
        $.each(response.fail,function(index,value){
         let paragraph = `<p class="errors">${value}</p>`;
-        $('input[name="'+index+'"]').addClass("error").after(paragraph);
-          $('textarea[name="'+index+'"]').addClass("error").after(paragraph);
+        $('input[name="'+index+'"]').addClass("error").before(paragraph);
+        
 
        })
      }else{

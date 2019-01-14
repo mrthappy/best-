@@ -19,9 +19,7 @@ function confirm_query($query){
    return $query ;
  }
 
- function savehtml($data){
-  return htmlspecialchars($data);
-}
+
 }
 
 

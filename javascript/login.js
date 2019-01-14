@@ -3,31 +3,68 @@ let form =$("#register");
 form.submit(function(event){
   event.preventDefault();
   Reset();
+
 $.ajax({
   url:"process.php",
   method:"post",
   data:form.serialize()
 
+
 }).done(function(res){
-console.log(res);
+  if(res.hasOwnProperty("error")){
+   $.each(res.error,function(index,value){
+    let paragraph = `<p class="errors">${value}</p>`;
+    $('input[name="'+index+'"]').addClass("error").after(paragraph);
+
+
+   })
+
+ }else {
+         return setTimeout(()=>{
+
+           let resultdiv =$(".result");
+           resultdiv.html(res.user);
+            clearvalues();
+            setTimeout(function(){
+            let resultdiv=$(".result");
+            resultdiv.remove();
+
+          },2000)
+
+
+
+         },1000);
+
+ }
+
 
 });
 
 
 
 
+});
+ function clearvalues(){
+   let inputtags=$(".input");
+   $.each(inputtags,function(index,value){
+      $(this).val("");
+   });
+ }
+
+ function Reset(){
+let inputtags=$(".input");
+let Array = [].slice.call(inputtags);
+$.each( Array,function(index,value){
+  let parent =$(this).parent();
+  $(this).next().remove();
+  if(parent.children().hasClass("error")){
+    parent.children().removeClass("error");
+  }
 
 
 
 });
 
-function Reset (){
-  // reset inputtags ;
-   let inputTags =document.querySelectorAll(".input");
-    let array=[].slice.call(inputTags);
-    for(let i=0; i<array.length;i++){
-      array[i].classList.remove("errors");
-    }
-}
+ }
 
 });
