@@ -27,3 +27,13 @@ endif;
 
 
 ?>
+<script>
+
+// get the positon and animate it accordingly ;
+window.addEventListener("load",function(){
+  let image=document.querySelector(".team_image");
+   image.style.left=`200px`;
+})
+
+
+</script>

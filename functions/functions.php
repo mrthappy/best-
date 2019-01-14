@@ -18,13 +18,13 @@ function confirm_query($query){
  }else{
    return $query ;
  }
+
+ function savehtml($data){
+  return htmlspecialchars($data);
+}
 }
 
-function queri($sql){
-  global $database;
-  $sql =$datbase->query($sql);
-  return $sql;
-}
+
 
 
  ?>
