@@ -19,21 +19,9 @@ $.ajax({
 
    })
 
- }else {
-         return setTimeout(()=>{
+ }else if(res.hasOwnProperty("user")) {
+        $(location).attr('href', 'welcome.php?id='+res.user["memberid"]);
 
-           let resultdiv =$(".result");
-           resultdiv.html(res.user);
-            clearvalues();
-            setTimeout(function(){
-            let resultdiv=$(".result");
-            resultdiv.remove();
-
-          },2000)
-
-
-
-         },1000);
 
  }
 
