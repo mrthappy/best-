@@ -92,7 +92,7 @@
    setTimeout(function(){
       let image=document.querySelector(".team_image");
       image.classList.add("transition");
-   },10);
+   },40);
  });
 
 

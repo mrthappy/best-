@@ -20,7 +20,11 @@ $.ajax({
    })
 
  }else if(res.hasOwnProperty("user")) {
+         clearvalues();
+         
         $(location).attr('href', 'welcome.php?id='+res.user["memberid"]);
+
+
 
 
  }
@@ -54,5 +58,7 @@ $.each( Array,function(index,value){
 });
 
  }
+
+
 
 });

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Ubuntu');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:after{
+  clear:both;
+  content:"";
+  display:block;
+}
+body {
+
+    background:#353535;
+    color:#fff;
+}
+img{
+  max-width:100%;
+  display:block;
+}
+.logo_header {
+    background: #353535;
+    height: 50px;
+    display: block;
+    width: 100% !important ;
+    padding-top: 10px;
+    padding-left: 10px;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:.2px solid white;
+    align-items:center;
+}
+
+.logo_image {
+    background-image: url("../images/newlogo-Recovered.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 30px;
+    height: 30px;
+}
+nav.user_details{
+  background:orange;
+  display:block;
+
+}
+ul{
+  list-style:none;
+}
+a{
+  display:block;
+  text-decoration:none;
+  color:#adb7be;
+  font-size:.8em;
+ font-family: 'Ubuntu', sans-serif;
+}
+.fas{
+
+  display:block;
+}
+.avatar_parent{
+display:block;
+margin-top:30px;
+}
+#hamburger{
+     width: 30px;
+      height: 60px;
+      margin-left: 10px;
+      cursor: pointer;
+      margin-top:20px;
+      transition: all ease-in-out .4s;
+
+}
+#hamburger.active .burger_icon{
+  background:transparent;
+}
+#hamburger.active .burger_icon:after{
+  transform:rotate(45deg);
+  top:0px;
+}
+#hamburger.active .burger_icon:before{
+  transform:rotate(-45deg);
+  top:0;
+}
+
+.burger_icon{
+  width:35px;
+  height:3px;
+position:relative;
+  display:block;
+  transition:all ease-in-out .8s;
+  background:white;
+  top:10px;
+
+
+
+}
+.burger_icon::after{
+  display:block;
+  content:"";
+  width:35px;
+  height:3px;
+background:red;
+transition:all ease-in .4s;
+
+}
+.burger_icon::before{
+  display:block;
+  content:"";
+  width:35px;
+  height:3px;
+background:black;
+transition:all ease-in .4s;
+}
+.burger_icon:after{
+  top:10px;
+  position:absolute;
+}
+.burger_icon:before{
+  bottom:9px;
+  position:absolute;
+
+}
+.a.random {
+  transform :translateX(400px);
+}
