@@ -28,6 +28,9 @@ function confirm_query($query){
  }else{
    return $query ;
  }
+ function savehtml($data){
+  return htmlspecialchars($data);
+}
 }
 
 

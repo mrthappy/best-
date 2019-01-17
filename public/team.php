@@ -87,6 +87,18 @@
  </body>
  <script>
 
+ // get the positon and animate it accordingly ;
+ window.addEventListener("load",function(){
+   setTimeout(function(){
+      let image=document.querySelector(".team_image");
+      image.classList.add("transition");
+   },40);
+ });
+
+
+
+
+
  </script>
 
  </html>

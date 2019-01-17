@@ -23,7 +23,11 @@
   transition: all .5s ease-in;
 }
 .errors{
-  border:2px solid red;
+color:red;
+font-size:1.2em;
+}
+.error{
+  border:1px solid red;
 }
 img{
 
