@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -14,31 +15,20 @@
       <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
-  <div id ="cover">
-  <header class="logo_header">
-    <div class="logo_image"> </div>
-    <div  class="user_div">
-      <span class="avatar_parent"><i class="fas fa-user"></i></span>
-      <nav class="user-details">
-      <ul>
-        <li><a href ="#" class="listanchor">EDIT PROFILE</a></li>
-          <li><a href ="#" class="listanchor">Change Password</a></li>
-            <li><a href ="#" class="listanchor">Logout</a></li>
-
-      </ul>
-    </nav>
-
-
-
-    </div>
-    <div id="hamburger">
-      <span class="burger_icon"></span>
-    </div>
-  </header>
-</div>
+<?php include "userheader.php"?>
 <!-- end of the logo Area -->
-<a href="files.php?id=dkd" class="a">url</a>
+<?php
+if(isset($_SESSION["user"])):
+  $userinfor=$_SESSION["user"];
+  include "../database/database.php";
+  $category="SELECT * FROM category";
+  $query =Query($category);
+
+endif;
+?>
+ <?php while $category =$query->fetch_assoc()){?>
 <section class="news">
+
 
   <article class="article">
     <img src ="../images/user.jpeg">
@@ -56,6 +46,28 @@
 </section>
 <script>
 let anchors =document.querySelector(".a");
+let hamburger=document.getElementById("hamburger");
+// add a  animation to the hamburger element
+
+hamburger.addEventListener("click",function(){
+  let self =this ;
+  let respond=false;
+  if(!(self.classList.contains("active"))){
+    // animattion starts here
+      self.classList.add("active");
+      respond=true;
+  }else{
+    self.classList.remove("active");
+    respond=false;
+  }
+});
+
+
+
+
+
+
+console.log(hamburger);
 console.log(anchors);
 anchors.addEventListener("click",function (event){
 event.preventDefault();
