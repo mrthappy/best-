@@ -13,38 +13,30 @@
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="../javascript/edit.js"></script>
       <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
 </head>
 <body>
 
            <?php include "userheader.php"?>
            <!-- end of the header here -->
            <section class="Textintro">
-              <div class="firstpanel">
-                <p class="paneltext">Profile</p>
-          
+              <div class="first-panel">
+                <div class="into">
+                  <p class="para">Profile</p>
+                  <span class="fonticons"></span>
+                </div>
 
-<div class="formpanel">
-<form enctype="multipart/form-data">
-  <div class="divcontainer">
-    <div class="labelcontainer">
-      <div class="labelholder">
-        <label for="images">
-        </label>
-        <span class="textplaceholder">
-          <p class="para">Upload your avatar</p>
-        </span>
-      </div>
-      <input type ="file" id ="images">
-        <div class="input_holder">
-      <input type ="text" class="input" name="firstname" placeholder="firstname">
-        <input type ="text" class="input" name="firstname" placeholder="lastname">
-    </div>
 
-  </div>
+                </div>
 
-    </div>
-</form>
-</div>
+
+
+
+
+
+
+
+
 
 
 

@@ -25,3 +25,17 @@
 //
 //
 // }
+window.onload=function (){
+  let fonticons=document.querySelector(".fonticons");
+  // let the arrow rotate
+  fonticons.addEventListener("click",function(e){
+    let self =this;
+    return setTimeout(function(){
+     self.classList.toggle("rotate");
+
+  }.bind(this),100);
+
+  });
+
+
+}
