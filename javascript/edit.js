@@ -27,15 +27,36 @@
 // }
 window.onload=function (){
   let fonticons=document.querySelector(".fonticons");
-  // let the arrow rotate
-  fonticons.addEventListener("click",function(e){
-    let self =this;
-    return setTimeout(function(){
-     self.classList.toggle("rotate");
+  let icons=document.querySelectorAll(".fonticons")
+  icons.forEach(function (e){
+    e.addEventListener("click",function(){
+      let self =this ;
+      return setTimeout(function(){
+          self.classList.toggle("rotate");
+           let mainparent =self.parentElement.parentElement;
+           let height =mainparent.offsetHeight;
+           if (!mainparent.classList.contains("expand")){
+             mainparent.classList.add("expand");
+           }else{
+             mainparent.classList.remove("expand");
+           }
 
-  }.bind(this),100);
+
+      }.bind(this),100);
+
+    })
 
   });
 
+
+
+  console.log(icons);
+  // let the arrow rotate
+
+
+let btn=document.querySelector(".btn");
+btn.addEventListener("click",(e)=>{
+  e.preventDefault();
+})
 
 }

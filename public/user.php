@@ -18,31 +18,35 @@
 <?php include "userheader.php"?>
 <!-- end of the logo Area -->
 <?php
-if(isset($_SESSION["user"])):
-  $userinfor=$_SESSION["user"];
-  include "../database/database.php";
-  $category="SELECT * FROM category";
-  $query =Query($category);
+if(isset($_SESSION["user"])){
 
-endif;
+  $session=$_SESSION["user"];
+  // get the category from the database
+  include "../database/database.php";
+  $category ="SELECT * FROM categorylist";
+  $result =Query($category);
+
+
+
+
+}
+
+
+
 ?>
- <?php while $category =$query->fetch_assoc()){?>
+
 <section class="news">
 
 
   <article class="article">
-    <img src ="../images/user.jpeg">
+    <div class="articlepage">
+    <img src ="../images/model1.jpg">
    <h1>Header for the Article</h1>
+   <p>Posted On: 12.23.2019</p>
+ </div>
   </article>
 
-  <article class="article">
-    <img src ="../images/user2.jpeg">
-   <h1>Header for the Article</h1>
-  </article>
-  <article class="article">
-    <img src ="../images/user1.jpeg">
-   <h1>Header for the Article</h1>
-  </article>
+
 </section>
 <script>
 let anchors =document.querySelector(".a");

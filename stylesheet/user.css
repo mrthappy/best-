@@ -142,3 +142,19 @@ transition:all ease-in .4s;
   transform:rotate(-45deg);
   top:0;
 }
+ .article{
+   max-width:1200x;;
+   height:500px;
+   margin:50px  auto;
+   height:auto;
+   background:orange;
+   display:block;
+ }
+.articlepage >img {
+  width: 100vw;
+ position: relative;
+ left: 50%;
+ right: 50%;
+ margin-left: -50%;
+ margin-right: -50%;
+}

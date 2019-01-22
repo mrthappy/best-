@@ -1,4 +1,10 @@
-
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -mos-box-sizing:border-box;
+}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
@@ -17,12 +23,29 @@
   margin:100px auto;
 
 }
+
 .first-panel{
     background: #303030;
   max-width:644px;
-  margin:0 auto;
-  height:auto;
+  margin:20px auto;
+  height:98px;
+  overflow:hidden;
+  transition:all linear .5s;
+  transform:translateY(-10px)
 
+
+
+}
+.style{
+  display:flex;
+  flex-direction:column;
+
+  margin-bottom:20px;
+}
+.expand{
+  height:auto;
+  overflow:visible;
+  transform:translateY(0px);
 
 }
 p.para{
@@ -33,12 +56,7 @@ p.para{
    margin-left:10px;
 
  }
-.into{
 
-
-
-
-}
 .fonticons{
   display:block;
   float:right;
@@ -46,7 +64,8 @@ p.para{
   margin-right:20px;
   position:relative;
   cursor:pointer;
-  transition:all ease-in .4s;
+  transition:all linear .75s;
+  user-select: contain;
 
   }
   .fonticons.rotate::after{
@@ -58,6 +77,8 @@ p.para{
     top:0px;
     right:10px;
      transform:rotate(180deg);
+     transition:all linear .6s;
+     z-index:1;
   }
   .fonticons:after{
      font-family: "Font Awesome 5 Free";
@@ -67,6 +88,117 @@ p.para{
      font-size:.8em;
      top:0px;
      right:10px;
+     z-index:2;
+     transform:rotate(0deg);
+     transition:all linear .5s;
+  }
+
+  .label{
+
+    display:block;
+    cursor:pointer;
+    width:100%;
+    padding:  0px;
+    display:flex;
+  }
+  .icons{
+    display:inline-block;
+    width:50px;
+    height:50px;
+    background:#484848;;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+  }
+  .icons:before{
+    display:block;
+    content:"\f302";
+    font-family:"Font Awesome 5 free";
+    font-weight:900;
 
 
   }
+  #fileimage{
+    display:none;
+
+  }
+.labelinput{
+
+  width:70%;
+  margin:auto auto;
+  cursor:pointer;
+  background:#353535;
+  padding:10px;
+  margin-bottom:20px;
+
+}
+.paratext{
+  background:#353535;
+  width:90%;
+  text-align:center;
+
+
+}
+.paratext>p{
+  margin-top:20px;
+}
+.inputholder{
+
+width:70%;
+margin:auto auto;
+
+}
+.inputdiv{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+
+}
+.inputsubmit{
+  width:70%;
+  margin:auto auto ;
+  margin-bottom:20px;
+
+}
+
+.input{
+  display:block;
+  width:100%;
+  outline:none;
+  border:0px;
+  background:#353535;
+  padding:20px;
+  margin-right:10px;
+}
+.passwordinput{
+  display:block;
+  width:100%;
+  outline:none;
+  border:0px;
+  background:#353535;
+  padding:30px;
+  margin-bottom:20px;
+}
+.passwordinput:last-of-type{
+  margin-bottom:10px;
+}
+.input:last-of-type{
+  margin-right:0px;
+}
+.btn{
+  display:block;
+  outline:none;
+  border:0px;
+  text-transform:capitalize;
+  background:linear-gradient(-180deg,#3db96d 0%,#1b904e 100%);
+  color:white;
+  padding: 16px 20px ;
+  line-height:16px;
+  border-radius:5px;
+  width:48%;
+  font-weight:bold;
+  margin-bottom:20px;
+
+}
