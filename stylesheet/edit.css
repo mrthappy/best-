@@ -121,7 +121,7 @@ p.para{
 
   }
   #fileimage{
-    display:none;
+    opacity:0;
 
   }
 .labelinput{

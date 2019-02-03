@@ -23,8 +23,8 @@ if(isset($_SESSION["user"])){
   $session=$_SESSION["user"];
   // get the category from the database
   include "../database/database.php";
-  $category ="SELECT * FROM categorylist";
-  $result =Query($category);
+  $result=find_all("categorylist");
+
 
 
 
@@ -35,19 +35,40 @@ if(isset($_SESSION["user"])){
 
 ?>
 
+<?php while($row =$result->fetch_assoc()){?>
 <section class="news">
+<?php
+$output="";
+$output.= '<a  class="anchor"href="page.php?id='.$row["category_id"].'"> ';
+$output.= '<article class="article"> ';
+$output.= '  <div class="articlepage"> ';
+$output.='  <div class="articlepage"> ';
+$output.=' <img src ="../images/'.$row["category_img"].'"> ';
+$output.='  <div class="headingdiv"> ';
+$output.=' <span class="headingspan"> ';
+$output.= '<h1 class="heading">' .$row["category_header"]. '</h1> ';
+$output.= ' <p class="heading-para">' .$row["category_date"]. '</p> ';
+$output.= ' </span> ';
+$output.=' <div> ';
+$output.= '</article> ';
+$output.='</a> ';
+
+echo $output;
 
 
-  <article class="article">
-    <div class="articlepage">
-    <img src ="../images/model1.jpg">
-   <h1>Header for the Article</h1>
-   <p>Posted On: 12.23.2019</p>
- </div>
-  </article>
+
+
+
+?>
+
+
+<?php }?>
 
 
 </section>
+
+
+
 <script>
 let anchors =document.querySelector(".a");
 let hamburger=document.getElementById("hamburger");
@@ -84,6 +105,19 @@ then(function(response){
 }).then(function(data){
   console.log(data);
 })
+
+let anchor=document.querySelector(".anchor");
+anchor.addEventListener("click",function(event){
+  event.preventDefault();
+  let self =this ;
+  let href =self.getAttribute("href");
+   return fetch(href).then(function(data){
+    return data.json();
+  }).then(function(result){
+    console.log(result);
+  });
+
+});
 
 });
 </script>

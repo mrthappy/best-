@@ -50,13 +50,60 @@ window.onload=function (){
 
 
 
-  console.log(icons);
+
   // let the arrow rotate
 
 
 let btn=document.querySelector(".btn");
-btn.addEventListener("click",(e)=>{
-  e.preventDefault();
-})
+let form=document.querySelector(".form");
+
+form.addEventListener("submit",function(event){
+  event.preventDefault();
+  let fileinput =document.querySelector("#fileimage");
+
+    let file = fileinput.files[0];
+    console.log(file)
+    // let reader =new FileReader();
+    // reader.onload =function (e){
+    //   let img =new Image();
+    //   img.src=reader.result;
+    //   form.appendChild(img);
+    // }
+    // reader.readAsDataURL(file);
+
+
+  let formdata =new FormData(this);
+  fetch("imageloader.php",{
+
+    method:"POST",
+    body:formdata
+  }).then((data)=>data.text()).then((response)=>{
+    console.log(response);
+  })
+
+
+
+
+
+});
+
+// btn.addEventListener("click",(e)=>{
+//   e.preventDefault();
+//   let self =this;
+//   let counter =1;
+//   let text =document.querySelector(".paratext");
+//   return setInterval(function(){
+//     if(counter < 100){
+//       counter++;
+//     }
+//     text.innerHTML =counter + "%"+ "it is loading...."
+//     if(counter ==100){
+//       clearInterval();
+//
+//       text.innerHTML="jjdfdjafd"
+//     }
+//   }.bind(self),10)
+//
+// })
 
 }

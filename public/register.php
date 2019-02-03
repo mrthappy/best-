@@ -28,11 +28,11 @@
   session_start();
   if(isset($_SESSION["user"])){
 
-    header("location:index.php");
+    header('location:welcome.php?id=$_SESSION["user"]["memberid"]' );
 
   }else {
 
-  echo include "registerform.php";
+   include "registerform.php";
   }
 
 

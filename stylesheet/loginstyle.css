@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +45,7 @@ body {
     font-size: 70%;
 
     line-height: 1;
+
     background: #dfe6e9;
 
 
@@ -164,7 +166,7 @@ label {
 }
 
 .logo_image {
-    background-image: url("../images/logo.png");
+    background-image: url("../images/newlogo-Recovered.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

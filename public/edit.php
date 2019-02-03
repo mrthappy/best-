@@ -26,25 +26,25 @@
                   <span class="fonticons"></span>
                 </div>
                 <div class="panel_content">
-                  <form method="POST" action="imageloader.php" enctype="multipart/form-data">
+                  <form method="POST" action="#" enctype="multipart/form-data" class="form">
                     <div class="labelinput">
                     <label for="fileimage" class="label">
                       <span class="icons"></span>
-                      <input type="file" id="fileimage">
+
                       <span class="paratext"><p>Enter your Upload:</p></span>
                     </label>
-
+                       <input type="file" id="fileimage" class="input"name="fileimage">
                     </div>
                     <div class="inputholder inputdiv">
-                      <input type ="text" class="input" placeholder="firstname">
-                      <input type="text" class="input" placeholder="lastname">
+                      <input type ="text" class="input" placeholder="firstname"name="firstname">
+                      <input type="text" class="input" placeholder="lastname"name="lastname">
                     </div>
                     <div class="inputholder inputdiv">
-                      <input type="email" class="input" placeholder="email-address">
+                      <input type="email" class="input" placeholder="email-address"name="email">
                     </div>
 
                     <div class="inputsubmit">
-                      <input type="submit" class="btn">
+                      <input type="submit" class="btn" name="submit">
                     </div>
                   </form>
                 </div>

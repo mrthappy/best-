@@ -5,7 +5,7 @@
     <span class="avatar_parent"><i class="fas fa-user"></i></span>
     <nav class="user-details">
     <ul>
-      <li><a href ="#" class="listanchor">Edit Profile</a></li>
+      <li><a href ="edit.php" class="listanchor">Edit Profile</a></li>
         <li><a href ="#" class="listanchor">Change Password</a></li>
           <li><a href ="#" class="listanchor">Logout</a></li>
 

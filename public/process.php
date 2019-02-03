@@ -30,6 +30,7 @@ $error=array();
   if(!(empty($firstname))&& !(empty($lastname))  && !(empty($email)) &&!empty($password)) {
       $password=password_hash($password,PASSWORD_BCRYPT);
         $checkemail="select * from registration where email='$email' limit 1";
+
           $emailquery=Query($checkemail);
             $numrows=$emailquery->num_rows;
             if($numrows > 0){
@@ -38,16 +39,16 @@ $error=array();
               echo json_encode($data);
 
             }else{
-              $query="insert into registration(firstname,lastname,password,email,date)values('$firstname','$lastname','$password','$email',NOW())";
+              $query="INSERT INTO registration (firstname,lastname,password,email,date,avatar) VALUES('$firstname','$lastname','$password','$email',NOW(),'imgag.jeg')";
               $request=Query($query);
-              $result="select * from registration where email='$email'limit 1";
+              $result="SELECT  * FROM  registration WHERE  email='$email' LIMIT 1";
               $resultfound=Query($result);
               while($row=$resultfound->fetch_assoc()){
 
                    $_SESSION["user"]=$row;
 
-                   $data=array("user"=> $_SESSION["user"]);
-                   echo json_encode($data);
+                    $data=array("user"=> $_SESSION["user"]);
+                    echo json_encode($data);
               }
 
             }
