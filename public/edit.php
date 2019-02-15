@@ -16,6 +16,7 @@ session_start();
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="../javascript/edit.js" async ></script>
       <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+      <script src="../javascript/edit2.js" asyn></script>
 
 </head>
 <body>

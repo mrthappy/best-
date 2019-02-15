@@ -51,31 +51,31 @@ window.onload=function (){
 
   // let the arrow rotate
 
+// 
+// let btn=document.querySelector(".btn");
+// let form=document.querySelector(".form");
+// btn.addEventListener("click",function(evt){
+//   evt.preventDefault();
+//   let file =document.querySelector("#fileimage").files[0];
+//   let formdata=new FormData(form);
+//   let xhr= new XMLHttpRequest();
+//   let url =form.action ;
+//   xhr.open("POST",url);
+//   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   xhr.onreadystatechange=function(){
+//     if(xhr.status==200&&xhr.readyState==4){
+//        let response =JSON.parse(xhr.responseText)
+//        console.log(response)
+//     }
+//
+//
+//
+//   }
+//
+// xhr.send(formdata)
+//
 
-let btn=document.querySelector(".btn");
-let form=document.querySelector(".form");
-btn.addEventListener("click",function(evt){
-  evt.preventDefault();
-  let file =document.querySelector("#fileimage").files[0];
-  let formdata=new FormData(form);
-  let xhr= new XMLHttpRequest();
-  let url =form.action ;
-  xhr.open("POST",url);
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange=function(){
-    if(xhr.status==200&&xhr.readyState==4){
-       let response =JSON.parse(xhr.responseText)
-       console.log(response)
-    }
-
-
-
-  }
-
-xhr.send(formdata)
-
-
-});
+// });
 
 
 
