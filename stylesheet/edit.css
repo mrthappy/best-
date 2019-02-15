@@ -112,6 +112,14 @@ p.para{
     align-items:center;
 
   }
+  span.icon{
+    display:block;
+    width:50px;
+    height:50px;
+    background:blue;
+    margin-left:10px;
+    display:flex;
+  }
   .icons:before{
     display:block;
     content:"\f302";
@@ -120,6 +128,7 @@ p.para{
 
 
   }
+
   #fileimage{
     opacity:0;
 

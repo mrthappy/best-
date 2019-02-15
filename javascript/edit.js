@@ -43,11 +43,9 @@ window.onload=function (){
 
 
       }.bind(this),100);
-
     })
 
   });
-
 
 
 
@@ -56,36 +54,115 @@ window.onload=function (){
 
 let btn=document.querySelector(".btn");
 let form=document.querySelector(".form");
-
-form.addEventListener("submit",function(event){
-  event.preventDefault();
-  let fileinput =document.querySelector("#fileimage");
-
-    let file = fileinput.files[0];
-    console.log(file)
-    // let reader =new FileReader();
-    // reader.onload =function (e){
-    //   let img =new Image();
-    //   img.src=reader.result;
-    //   form.appendChild(img);
-    // }
-    // reader.readAsDataURL(file);
-
-
-  let formdata =new FormData(this);
-  fetch("imageloader.php",{
-
-    method:"POST",
-    body:formdata
-  }).then((data)=>data.text()).then((response)=>{
-    console.log(response);
-  })
+btn.addEventListener("click",function(evt){
+  evt.preventDefault();
+  let file =document.querySelector("#fileimage").files[0];
+  let formdata=new FormData(form);
+  let xhr= new XMLHttpRequest();
+  let url =form.action ;
+  xhr.open("POST",url);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange=function(){
+    if(xhr.status==200&&xhr.readyState==4){
+       let response =JSON.parse(xhr.responseText)
+       console.log(response)
+    }
 
 
 
+  }
+
+xhr.send(formdata)
 
 
 });
+
+
+
+/*
+let file =document.querySelectorAll(".input")[1];
+
+file.addEventListener("change",function(){
+  let self =this.files[0]
+  let imagetype="image/*"
+  if(self.type.match(imagetype)){
+      let reader =new FileReader();
+
+        reader.onload =function(e){
+          let icons =document.querySelector(".icons")
+          icons.innerHTML=""
+          let image =document.createElement("img");
+          image.src=reader.result
+          icons.appendChild(image)
+
+
+
+        }
+          reader.readAsDataURL(self);
+  }else{
+    console.log("this is the wrong type of file")
+  }
+
+
+});
+*/
+
+
+//
+// btn.addEventListener("click",function(event){
+//   event.preventDefault();
+//   let files="";
+//   let fileinput =document.querySelector("#fileimage");
+//
+//
+//     let file = fileinput.files[0];
+//
+//     // let reader =new FileReader();
+//     // reader.onload =function (e){
+//     //   let img =new Image();
+//     //   img.src=reader.result;
+//     //   form.appendChild(img);
+//     ///}
+//     // reader.readAsDataURL(file);
+//   var formdata =  new FormData(document.querySelector(".form"));
+//   let data ={
+//     id :document.querySelectorAll(".input")[0].value,
+//     file:document.querySelector("#fileimage").files,
+//     firstname:document.querySelectorAll(".input")[2].value,
+//     lastname:document.querySelectorAll(".input")[3].value,
+//     email:document.querySelectorAll(".input")[4].value
+//   }
+//   let Data =`id=${data.id} && file=${data.file} && firstname=${data.firstname}&& lastname=${data.lastname}&&emai=${data.email}`
+//
+//
+//
+//
+//
+//
+//
+//
+//   // set http request
+//   let xhp =new XMLHttpRequest();
+//   xhp.open("POST","imageloader.php",true);
+//   xhp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   xhp.onreadystatechange =function (){
+//     if(xhp.status ==200 && xhp.readyState===4){
+//       let firstname=xhp.responseText
+//       console.log(firstname)
+//
+//
+//       }
+//     }
+//
+//   xhp.send(Data);
+//
+//
+//
+//
+//
+// });
+//
+
 
 // btn.addEventListener("click",(e)=>{
 //   e.preventDefault();

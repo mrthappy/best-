@@ -1,34 +1,30 @@
 <?php
-
+header("Content-Type: application/json");
 include "../database/database.php";
-$firstname =isset($_POST["firstname"])?cleanser($_POST["firstname"]):"";
-$lastname=isset($_POST["lastname"])?cleanser($_POST["lastname"]): " ";
-$file=isset($_FILES["fileimage"])?cleanser($_FILES["fileimage"]["name"]): "";
-$filetmp=isset($_FILES["fileimage"])?cleanser($_FILES["fileimage"]["tmp_name"]):"";
-$email=isset($_POST["email"])?cleanser($_POST["email"]): "";
-$error=[];
-$data=[];
-  $upload ="../upload/";
 
-if($firstname && $lastname&&$email&&$file){
-  $extension = strtolower(pathinfo($_FILES['fileimage']['name'], PATHINFO_EXTENSION));
-  $allowed_extensions = array('png', 'jpg', 'jpeg', 'gif');
-  if(!in_array($extension, $allowed_extensions)) {
-   echo "Ungültige Dateiendung. Nur png, jpg, jpeg und gif-Dateien sind erlaubt";
-   exit;
+$id =isset($_POST["id"])?cleanser($_POST["id"]):"";
+ $filename=isset($_FILES["fileimage"]["name"])?cleanser($_FILES["fileimage"]["name"]):" ";
+ $tmp=isset($_FILES["fileimage"]["tmp_name"])?cleanser($_FILES["fileimage"]["tmp_name"]):" ";
+$firstname =isset($_POST["firstname"])?cleanser($_POST["firstname"]):" ";
+$lastname =isset($_POST["lastname"])?cleanser($_POST["lastname"]):" ";
+$email=isset($_POST["email"])?cleanser($_POST["email"]):" ";
+ if($filename){
+    $upload_folder = '../upload/'; //Das Upload-Verzeichni
+    $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+    $allowed_extensions = array('png', 'jpg', 'jpeg', 'gif');
+    if(!in_array($extension, $allowed_extensions)) {
+     $error["failure"]="this is not allowed";
+
+   }else{
+     move_uploaded_file($tmp,$upload_folder.$filename);
+
+
+   }
+  if(empty($error)){
+    $data["success"]="thank you";
+    echo json_encode($data);
+
+  }else{
+    echo json_encode($error);
   }
-
-  // checkout for the image
-
-if(move_uploaded_file($_FILES["fileimage"]["tmp_name"],$upload.$file)){
-  echo " it was done";
-}else{
-  echo "it was not uploased";
-}
-
-}else {
-  echo "please edit any of the fieldds";
-}
-
-
-?>
+   }

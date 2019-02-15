@@ -15,26 +15,26 @@
       <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
+  <?php
+  if(isset($_SESSION["user"]) && isset($_GET["id"])){
+
+    $session=$_SESSION["user"];
+    $id=$_GET["id"];
+    // get the category from the database
+    include "../database/database.php";
+    $result=find_all("categorylist");
+
+
+
+
+
+  }
+
+
+
+  ?>
 <?php include "userheader.php"?>
 <!-- end of the logo Area -->
-<?php
-if(isset($_SESSION["user"])){
-
-  $session=$_SESSION["user"];
-  // get the category from the database
-  include "../database/database.php";
-  $result=find_all("categorylist");
-
-
-
-
-
-}
-
-
-
-?>
-
 <?php while($row =$result->fetch_assoc()){?>
 <section class="news">
 <?php

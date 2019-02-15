@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -17,6 +20,7 @@
 </head>
 <body>
 
+
            <?php include "userheader.php"?>
            <!-- end of the header here -->
            <section class="Textintro">
@@ -26,25 +30,47 @@
                   <span class="fonticons"></span>
                 </div>
                 <div class="panel_content">
-                  <form method="POST" action="#" enctype="multipart/form-data" class="form">
+                  <?php
+                  if(isset($_SESSION["user"]) && isset($_GET["id"])){
+                    include "../database/database.php";
+
+
+
+                    $user=$_SESSION["user"];
+                    $id=$user["memberid"];
+                    $userinfo ="SELECT * FROM registration WHERE memberid='$id'";
+                    $records =Query($userinfo);
+                    $result =$records->fetch_assoc();
+
+
+
+
+
+                  }
+                  ?>
+
+
+                  <form method="POST" action="imageloader.php" enctype="multipart/form-data" class="form">
+                    <input type ="hidden" name="id" value =<?php echo $result["memberid"];?> class="input">
                     <div class="labelinput">
                     <label for="fileimage" class="label">
                       <span class="icons"></span>
 
+
                       <span class="paratext"><p>Enter your Upload:</p></span>
                     </label>
-                       <input type="file" id="fileimage" class="input"name="fileimage">
+                       <input type="file" id="fileimage" class="input" name="fileimage">
                     </div>
                     <div class="inputholder inputdiv">
-                      <input type ="text" class="input" placeholder="firstname"name="firstname">
-                      <input type="text" class="input" placeholder="lastname"name="lastname">
+                      <input type ="text" class="input" placeholder="firstname" name="firstname"value=<?php echo $result["firstname"];?>>
+                      <input type="text" class="input" placeholder="lastname" name="lastname"value=<?php echo $result["lastname"];?>>
                     </div>
                     <div class="inputholder inputdiv">
-                      <input type="email" class="input" placeholder="email-address"name="email">
+                      <input type="email" class="input" placeholder="email-address" name="email" value=<?php echo $result["email"];?>>
                     </div>
 
                     <div class="inputsubmit">
-                      <input type="submit" class="btn" name="submit">
+                      <button  class="btn" name="submit">submit</button>
                     </div>
                   </form>
                 </div>

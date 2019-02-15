@@ -3,8 +3,6 @@
 session_start();
 header("Content-Type: application/json");
 include "../database/database.php";
-
-
 if($_SERVER['REQUEST_METHOD']==="POST"){
 $firstname=htmlspecialchars(trim(cleanser($_POST["firstname"])));
   $lastname=trim(cleanser($_POST["lastname"]));
@@ -12,7 +10,6 @@ $firstname=htmlspecialchars(trim(cleanser($_POST["firstname"])));
   $password=cleanser($_POST["pass"]);
 $error=array();
   $data=array();
-
   if(empty($firstname)):
     $error["firstname"]="firstname is needed";
   endif;
@@ -25,34 +22,26 @@ $error=array();
     if(empty($password)):
       $error["pass"]="pasword is needed";
     endif;
-
-
   if(!(empty($firstname))&& !(empty($lastname))  && !(empty($email)) &&!empty($password)) {
       $password=password_hash($password,PASSWORD_BCRYPT);
         $checkemail="select * from registration where email='$email' limit 1";
-
           $emailquery=Query($checkemail);
             $numrows=$emailquery->num_rows;
             if($numrows > 0){
               $error["email"]="user alredy exist";
               $data =array("error"=>$error);
               echo json_encode($data);
-
             }else{
-              $query="INSERT INTO registration (firstname,lastname,password,email,date,avatar) VALUES('$firstname','$lastname','$password','$email',NOW(),'imgag.jeg')";
+              $query="INSERT INTO registration(firstname,lastname,password,email,date,avatar) VALUES('$firstname','$lastname','$password','$email',NOW(),'NULL')";
               $request=Query($query);
-              $result="SELECT  * FROM  registration WHERE  email='$email' LIMIT 1";
+              $result="select * from registration where email='$email'limit 1";
               $resultfound=Query($result);
               while($row=$resultfound->fetch_assoc()){
-
                    $_SESSION["user"]=$row;
-
-                    $data=array("user"=> $_SESSION["user"]);
-                    echo json_encode($data);
+                   $data=array("user"=> $_SESSION["user"]);
+                   echo json_encode($data);
               }
-
             }
-
    }else {
           $data =array("error"=>$error);
       echo json_encode($data );

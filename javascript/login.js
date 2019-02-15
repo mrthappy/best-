@@ -12,7 +12,7 @@ $.ajax({
 
 }).done(function(res){
   if(res.hasOwnProperty("error")){
-       console.log(res);
+
    $.each(res.error,function(index,value){
     let paragraph = `<p class="errors">${value}</p>`;
     $('input[name="'+index+'"]').addClass("error").after(paragraph);
