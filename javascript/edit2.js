@@ -7,7 +7,7 @@ window.addEventListener("load",function(){
   imageloader.addEventListener("change",function(event){
     let filechanged =this.files[0]
     let reader =new FileReader();
-    console.log(reader)
+    console.log(readerg)
   })
   let form=document.querySelector(".form");
   let action =form.getAttribute("action");
