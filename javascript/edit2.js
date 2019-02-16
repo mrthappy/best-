@@ -2,6 +2,13 @@
 
 window.addEventListener("load",function(){
   let btn=document.querySelector(".btn");
+  let imageloader =document.querySelector("#fileimage")
+  // add an even tot he image loader
+  imageloader.addEventListener("change",function(event){
+    let filechanged =this.files[0]
+    let reader =new FileReader();
+    console.log(reader)
+  })
   let form=document.querySelector(".form");
   let action =form.getAttribute("action");
   let method=form.getAttribute("method");
