@@ -12,6 +12,7 @@ $.ajax({
 
 }).done(function(res){
   if(res.hasOwnProperty("error")){
+
    $.each(res.error,function(index,value){
     let paragraph = `<p class="errors">${value}</p>`;
     $('input[name="'+index+'"]').addClass("error").after(paragraph);
@@ -21,8 +22,10 @@ $.ajax({
 
  }else if(res.hasOwnProperty("user")) {
          clearvalues();
-         
-        $(location).attr('href', 'welcome.php?id='+res.user["memberid"]);
+
+
+
+         $(location).attr('href', 'welcome.php?id='+res.user["memberid"]);
 
 
 
@@ -36,6 +39,7 @@ $.ajax({
 
 
 });
+
  function clearvalues(){
    let inputtags=$(".input");
    $.each(inputtags,function(index,value){

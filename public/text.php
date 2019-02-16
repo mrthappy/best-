@@ -1,5 +1,7 @@
 <?php
-echo "this is it";
+include "../database/database.php";
+$query ="kkkf";
+$result =Query($query);
 
 
  ?>

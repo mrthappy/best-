@@ -7,6 +7,14 @@ function cleanser ($string){
   return $string ;
 }
 
+
+  function find_page_by_id($id){
+    global $database;
+    $query ="SELECT * FROM page WHERE page_id='$id'";
+    $query = Query($page);
+    return $query;
+  }
+
 function query ($sql){
 global $database ;
 $sql= $database->query($sql);

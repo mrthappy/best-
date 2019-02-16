@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -14,48 +15,84 @@
       <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
-  <div id ="cover">
-  <header class="logo_header">
-    <div class="logo_image"> </div>
-    <div  class="user_div">
-      <span class="avatar_parent"><i class="fas fa-user"></i></span>
-      <nav class="user-details">
-      <ul>
-        <li><a href ="#" class="listanchor">EDIT PROFILE</a></li>
-          <li><a href ="#" class="listanchor">Change Password</a></li>
-            <li><a href ="#" class="listanchor">Logout</a></li>
+  <?php
+  if(isset($_SESSION["user"]) && isset($_GET["id"])){
 
-      </ul>
-    </nav>
+    $session=$_SESSION["user"];
+    $id=$_GET["id"];
+    // get the category from the database
+    include "../database/database.php";
+    $result=find_all("categorylist");
 
 
 
-    </div>
-    <div id="hamburger">
-      <span class="burger_icon"></span>
-    </div>
-  </header>
-</div>
+
+
+  }
+
+
+
+  ?>
+<?php include "userheader.php"?>
 <!-- end of the logo Area -->
-<a href="files.php?id=dkd" class="a">url</a>
+<?php while($row =$result->fetch_assoc()){?>
 <section class="news">
+<?php
+$output="";
+$output.= '<a  class="anchor"href="page.php?id='.$row["category_id"].'"> ';
+$output.= '<article class="article"> ';
+$output.= '  <div class="articlepage"> ';
+$output.='  <div class="articlepage"> ';
+$output.=' <img src ="../images/'.$row["category_img"].'"> ';
+$output.='  <div class="headingdiv"> ';
+$output.=' <span class="headingspan"> ';
+$output.= '<h1 class="heading">' .$row["category_header"]. '</h1> ';
+$output.= ' <p class="heading-para">' .$row["category_date"]. '</p> ';
+$output.= ' </span> ';
+$output.=' <div> ';
+$output.= '</article> ';
+$output.='</a> ';
 
-  <article class="article">
-    <img src ="../images/user.jpeg">
-   <h1>Header for the Article</h1>
-  </article>
+echo $output;
 
-  <article class="article">
-    <img src ="../images/user2.jpeg">
-   <h1>Header for the Article</h1>
-  </article>
-  <article class="article">
-    <img src ="../images/user1.jpeg">
-   <h1>Header for the Article</h1>
-  </article>
+
+
+
+
+?>
+
+
+<?php }?>
+
+
 </section>
+
+
+
 <script>
 let anchors =document.querySelector(".a");
+let hamburger=document.getElementById("hamburger");
+// add a  animation to the hamburger element
+
+hamburger.addEventListener("click",function(){
+  let self =this ;
+  let respond=false;
+  if(!(self.classList.contains("active"))){
+    // animattion starts here
+      self.classList.add("active");
+      respond=true;
+  }else{
+    self.classList.remove("active");
+    respond=false;
+  }
+});
+
+
+
+
+
+
+console.log(hamburger);
 console.log(anchors);
 anchors.addEventListener("click",function (event){
 event.preventDefault();
@@ -68,6 +105,19 @@ then(function(response){
 }).then(function(data){
   console.log(data);
 })
+
+let anchor=document.querySelector(".anchor");
+anchor.addEventListener("click",function(event){
+  event.preventDefault();
+  let self =this ;
+  let href =self.getAttribute("href");
+   return fetch(href).then(function(data){
+    return data.json();
+  }).then(function(result){
+    console.log(result);
+  });
+
+});
 
 });
 </script>
