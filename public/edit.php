@@ -20,7 +20,7 @@ session_start();
 
 </head>
 <body>
-<h1>this is the merge</h1>
+<h1>this is the mergefhfhf</h1>
 
            <?php include "userheader.php"?>
            <!-- end of the header here -->
