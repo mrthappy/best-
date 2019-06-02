@@ -27,11 +27,12 @@
   <?php
   session_start();
   if(isset($_SESSION["user"])){
+    // add an echo to the get array
 
     header('location:welcome.php?id=$_SESSION["user"]["memberid"]' );
 
   }else {
-
+     session_destroy();
    include "registerform.php";
   }
 

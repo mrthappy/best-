@@ -47,18 +47,32 @@ session_start();
 
 
 
+                  }else{
+                    session_destroy();
+                    header("location:register.php");
                   }
                   ?>
 
+                  <?php
+                  // setup a query to find out if the user has already an image
 
+
+                   ?>
                   <form method="POST" action="imageloader.php" enctype="multipart/form-data" class="form">
                     <input type ="hidden" name="id" value =<?php echo $result["memberid"];?> class="input">
                     <div class="labelinput">
+                      <div class="imageReader">
+                      <span class="avatarimage"></span>
+                    </div>
                     <label for="fileimage" class="label">
+                      <!-- replace the pseudo with a img element -->
+                    <!--  <span class="avatarimage"></span>-->
+
                       <span class="icons"></span>
 
 
-                      <span class="paratext"><p>Enter your Upload:</p></span>
+                      <span class="paratext"><p class="changetext">Enter your Upload:</p></span>
+
                     </label>
                        <input type="file" id="fileimage" class="input" name="fileimage">
                     </div>
@@ -95,6 +109,7 @@ session_start();
                           </div>
 
                            </form>
+
 
                       </div>
 

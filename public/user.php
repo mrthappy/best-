@@ -70,56 +70,60 @@ echo $output;
 
 
 <script>
-let anchors =document.querySelector(".a");
-let hamburger=document.getElementById("hamburger");
-// add a  animation to the hamburger element
+window.addEventListener("load",function (){
+  let anchors =document.querySelector(".a");
+  let hamburger=document.getElementById("hamburger");
+  // add a  animation to the hamburger element
 
-hamburger.addEventListener("click",function(){
-  let self =this ;
-  let respond=false;
-  if(!(self.classList.contains("active"))){
-    // animattion starts here
-      self.classList.add("active");
-      respond=true;
-  }else{
-    self.classList.remove("active");
-    respond=false;
-  }
-});
-
-
-
-
-
-
-console.log(hamburger);
-console.log(anchors);
-anchors.addEventListener("click",function (event){
-event.preventDefault();
-let href =this.getAttribute("href");
-let url =this.getAttribute("url");
-let target =(event.target);
-fetch(target).
-then(function(response){
-  return response.text();
-}).then(function(data){
-  console.log(data);
-})
-
-let anchor=document.querySelector(".anchor");
-anchor.addEventListener("click",function(event){
-  event.preventDefault();
-  let self =this ;
-  let href =self.getAttribute("href");
-   return fetch(href).then(function(data){
-    return data.json();
-  }).then(function(result){
-    console.log(result);
+  hamburger.addEventListener("click",function(){
+    let self =this ;
+    let respond=false;
+    if(!(self.classList.contains("active"))){
+      // animattion starts here
+        self.classList.add("active");
+        respond=true;
+    }else{
+      self.classList.remove("active");
+      respond=false;
+    }
   });
 
-});
 
-});
+
+
+
+
+
+  console.log(anchors);
+  anchors.addEventListener("click",function (event){
+  event.preventDefault();
+  let href =this.getAttribute("href");
+  let url =this.getAttribute("url");
+  let target =(event.target);
+  fetch(target).
+  then(function(response){
+    return response.text();
+  }).then(function(data){
+    console.log(data);
+  })
+
+  let anchor=document.querySelector(".anchor");
+  anchor.addEventListener("click",function(event){
+    event.preventDefault();
+    let self =this ;
+    let href =self.getAttribute("href");
+     return fetch(href).then(function(data){
+      return data.json();
+    }).then(function(result){
+      console.log(result);
+    });
+
+  });
+
+  });
+
+})
+
 </script>
 
 </body>

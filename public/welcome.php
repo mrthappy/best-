@@ -9,6 +9,7 @@ if(isset($_SESSION["user"])&& isset($_GET["id"])){
 
 }else{
   session_destroy();
+  
 }
 
 
